@@ -198,9 +198,12 @@ header {
 	height: 50px;
 	display: flex;
 	align-items: center;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 
 	img {
-		width: 100px;
+		width: 140px;
 		height: 70.91px;
 		// transform: rotate(45deg);
 		flex-shrink: 0;
@@ -642,6 +645,7 @@ header {
 	align-items: flex-start;
 	justify-content: space-between;
 	flex-direction: column;
+
 	h3 {
 		color: var(--bg-F8F8F8);
 		font-size: 22px;
