@@ -25,8 +25,12 @@ Primary user: smmstay
 /* ==================================
 	Font
 /* =================================*/
-// @import '_fonts.scss';
 @import '../fonts/Gilroy/stylesheet.css';
+
+
+// Imports ----------------------------------------------------------------
+@import 'grid-system';
+
 /* ==================================
 	Common styles
 /* =================================*/
@@ -88,6 +92,9 @@ button {
 }
 
 .btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border: none;
 	padding: 15px 30px;
 	background-color: var(--bg-F8F8F8);
@@ -99,6 +106,26 @@ button {
 	font-weight: 500;
 	line-height: 100%;
 	cursor: pointer;
+}
+
+
+.title-block {
+	text-align: center;
+
+	.title {
+		color: var(--bg-F8F8F8);
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 26px;
+	}
+
+	.title-txt {
+		color: #B4B4B4;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 26px;
+		margin-top: 28px;
+	}
 }
 
 /*======================
@@ -310,3 +337,248 @@ header {
 /*=====================
 	Machine
 =====================*/
+
+#machine {
+	margin-top: 100px;
+}
+
+.machine-taps {
+	margin: 0 auto;
+	margin-bottom: 32px;
+	margin-top: 47px;
+	width: 100%;
+	max-width: fit-content;
+	padding: 6px;
+	border-radius: 10px;
+	background: var(--bg-def-dark2);
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+
+
+	button {
+		padding: 14px;
+		color: var(--bg-F8F8F8);
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 26px;
+		border: none;
+		background-color: transparent;
+
+		&.active {
+			background-color: #333;
+			border-radius: inherit;
+		}
+	}
+}
+
+.tab-card {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	border-radius: 20px;
+	background: var(--bg-def-dark2);
+
+	.tab-card__head {
+		display: flex;
+		align-items: center;
+		column-gap: 14px;
+
+		h2 {
+			color: var(--bg-F8F8F8);
+			font-size: 22px;
+			font-weight: 600;
+			line-height: 26px;
+		}
+	}
+}
+
+.tab-card__head {
+	.tab-head__icon {
+		border-radius: 12px;
+		background: #333;
+		width: 44px;
+		height: 44px;
+		flex-shrink: 0;
+		padding: 2px;
+	}
+}
+
+.version-list {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	column-gap: 8px;
+	row-gap: 10px;
+	list-style: none;
+	margin-top: 10px;
+	width: 100%;
+	max-width: 270px;
+
+	li {
+		color: var(--bg-F8F8F8);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 100%;
+		padding: 10px;
+		background-color: #333;
+		border-radius: 6px;
+	}
+}
+
+
+/*======================
+	Tariffs 
+=====================*/
+
+#tariffs {
+	margin-top: 100px;
+}
+
+.tariff-tabs {
+	margin: 0 auto;
+	margin-top: 45px;
+	width: 100%;
+	max-width: 494px;
+	background: var(--bg-def-dark2);
+	border-radius: 12px;
+
+	.tabs-seria {
+		padding: 6px;
+		display: flex;
+		align-items: flex-start;
+
+		button {
+			color: var(--bg-F8F8F8);
+			border: none;
+			background-color: transparent;
+			padding: 16px;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 26px;
+			width: 100%;
+			max-width: calc(100%/2);
+
+			&.active {
+				background-color: #333;
+				border-radius: 10px;
+			}
+		}
+
+		&:first-child {
+			border-radius: 12px 12px 0px 0px;
+		}
+
+		&:last-child {
+			border-radius: 0px 0px 12px 12px;
+		}
+	}
+}
+
+.tariff-slider {
+	margin-top: 50px;
+}
+
+.tariff-card {
+	border-radius: 20px;
+	background: var(--bg-def-dark2);
+	padding: 16px;
+
+
+	.tariff-card__head {
+		border-radius: inherit;
+		text-align: center;
+		padding: 20px;
+		background: #333;
+
+		.tag {
+			border-radius: 4px;
+			background: var(--bg-F8F8F8);
+			padding: 0 10px;
+		}
+
+		h3 {
+			margin-top: 10px;
+			color: var(--bg-F8F8F8);
+			font-size: 22px;
+			font-weight: 500;
+			line-height: 26px;
+		}
+	}
+
+	.tariff-card__btn {
+		width: 100%;
+		margin-top: 24px;
+	}
+}
+
+.tariff-card__about {
+	margin: 30px 0;
+
+	.about__item {
+		display: flex;
+		align-items: center;
+
+		.bottom-line {
+			width: 100%;
+			height: 1px;
+			margin-top: auto;
+			background-color: #4D4D4D;
+		}
+
+		h3 {
+			color: #B4B4B4;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 100%;
+			flex-shrink: 0;
+
+			&.white {
+				color: var(--bg-F8F8F8);
+			}
+		}
+
+		.info-icon {
+			margin-left: 6px;
+			flex-shrink: 0;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 14px;
+		}
+	}
+}
+
+.tariff-card__bottom {
+	h4 {
+		color: var(--bg-F8F8F8);
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 26px;
+		margin-bottom: 18px;
+	}
+}
+
+.tariff-card__select {
+	.select {
+		border-radius: 8px;
+		border: 1px solid #4D4D4D;
+		padding: 16px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+		pointer-events: visible;
+
+		h2 {
+			color: var(--bg-F8F8F8);
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 26px;
+		}
+	}
+}
+
+.tariffs-slider {
+	margin-top: 47px;
+}

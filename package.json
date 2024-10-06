@@ -30,6 +30,8 @@
 		"sass": "^1.67.0"
 	},
 	"dependencies": {
+		"@splidejs/splide": "^4.1.4",
+		"@splidejs/splide-extension-url-hash": "^0.3.0",
 		"cwebp-bin": "^8.0.0",
 		"gulp-cli": "^3.0.0",
 		"gulp-svgmin": "^4.1.0",
