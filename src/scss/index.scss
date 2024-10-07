@@ -205,7 +205,6 @@ header {
 	img {
 		width: 140px;
 		height: 70.91px;
-		// transform: rotate(45deg);
 		flex-shrink: 0;
 	}
 }
@@ -260,6 +259,22 @@ header {
 	}
 }
 
+.referral-home {
+	background-color: var(--bg-def-dark2);
+	background-image: url(../images/referral-liner.svg), url(../images/referral-home2.webp), url(../images/referral-home1.webp);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: calc(-240px) calc(100%), -20px 100%, calc(100% + 28px) 40px;
+	background-size: 1832px, 400px, 400px;
+
+	h1 {
+		font-size: 40px;
+	}
+
+	p {
+		margin-top: 30px;
+		margin-bottom: 45px;
+	}
+}
 
 .home-cards {
 	display: flex;
@@ -268,6 +283,7 @@ header {
 	gap: 28px;
 	margin-top: 44px;
 }
+
 
 .home-card {
 	background-color: var(--bg-def-dark2);
@@ -335,6 +351,104 @@ header {
 			margin-top: 43px;
 		}
 	}
+}
+
+.referral-home-cards {
+	margin-bottom: 44px;
+}
+
+.referral-home-card {
+	height: 100%;
+	padding: 30px;
+	background-color: var(--bg-def-dark2);
+	border-radius: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	row-gap: 35px;
+
+	h2 {
+		color: var(--bg-F8F8F8);
+		font-size: 26px;
+		font-weight: 600;
+		line-height: 26px;
+		margin-bottom: 24px;
+	}
+
+	p {
+		color: #999;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 18px;
+	}
+}
+
+.referral-card__bottom {
+	width: 100%;
+}
+
+.card-price {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	padding: 9px 12px;
+	background-color: #373738;
+	border-radius: 10px;
+
+	img {
+		flex-shrink: 0;
+		margin-right: 10px;
+	}
+
+	.card-price__about {
+		width: 100%;
+		max-width: 270px;
+
+		h3 {
+			color: var(--bg-F8F8F8);
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 18px;
+		}
+
+		p {
+			color: #999;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 18px;
+		}
+	}
+
+	h2 {
+		margin: 0;
+		margin-left: 22px;
+		flex-shrink: 0;
+		color: var(--bg-F8F8F8);
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 18px;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	&:nth-child(even) {
+		margin-left: auto;
+	}
+}
+
+.referral-series-item {
+	width: 100%;
+	padding: 30px;
+	color: var(--bg-F8F8F8);
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 26px;
+	background-color: var(--bg-def-dark2);
+	display: block;
+	border-radius: 14px;
 }
 
 /*=====================
@@ -626,6 +740,8 @@ header {
 		align-items: center;
 		justify-content: space-between;
 		padding: 10px 15px;
+		user-select: none;
+		cursor: pointer;
 
 		h3 {
 			color: var(--bg-F8F8F8);
