@@ -228,7 +228,12 @@
 									<h3>CPU</h3>
 									<span class="bottom-line"></span>
 									<h3 class="white">AMD Ryzen 9 5950X</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
+									<div class="toltip">
+										<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
+										<span class="info-toltip">	
+											Assalomu alaykum
+										</span>
+									</div>
 								</div>
 								<div class="about__item">
 									<h3>vCPU</h3>
@@ -819,6 +824,7 @@
 		var swiper = new Swiper(".tariffs-slider", {
 			slidesPerView: 4.5,
 			spaceBetween: 27,
+			mousewheel: true,
 		});
 	</script>
 </body>
