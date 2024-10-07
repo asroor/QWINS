@@ -10,35 +10,48 @@
 
 <body>
 	<div class="wrapper">
+		<div class="close-btn close-bg"></div>
 		<!-- header start -->
 		<header>
 			<div class="container">
 				<div class="header-wrapper">
-					<ul class="nav-links">
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">
-								Услуги
-								<img src="images/arrow-down.svg" alt="arrow down icon" width="19" height="19">
-							</a></li>
-						<li><a href="#">Рефералы</a></li>
-					</ul>
-					<a href="index.html" class="navbar-logo">
-						<img src="images/logo.svg" alt="logo" width="70.91" height="70.91">
-					</a>
-					<div class="navbar-btns">
-						<div class="lang-dropdown">
-							<input type="button" value="ru" class="btn lang-btn">
-							<ul class="dropdown-menu">
-								<li><a href="#">🇷🇺 Russia</a></li>
-								<li><a href="#">🇺🇸 English</a></li>
+					<div class="wrap">
+						<ul class="nav-links">
+							<li><a href="#">Главная</a></li>
+							<li class="header-dropdown"><a href="#">
+									Услуги
+									<img src="images/arrow-down.svg" alt="arrow down icon" width="19" height="19">
+								</a></li>
+							<li><a href="#">Рефералы</a></li>
+						</ul>
+						<a href="index.html" class="navbar-logo">
+							<img src="images/logo.svg" alt="logo" width="70.91" height="70.91">
+						</a>
+						<div class="navbar-btns">
+							<div class="lang-dropdown">
+								<input type="button" value="ru" class="btn lang-btn">
+								<ul class="dropdown-menu">
+									<li><a href="#">🇷🇺 Russia</a></li>
+									<li><a href="#">🇺🇸 English</a></li>
+								</ul>
+							</div>
+							<a href="#" class="btn login-btn">Войти</a>
+						</div>
+					</div>
+					<div class="header-bottom">
+						<div class="header-bottom__item">
+							<h3>Услуги</h3>
+							<ul class="header-bottom__links">
+								<li><a href="#"><img src="images/hr-icon1.svg" alt="link icon"> Выделенный сервер</a></li>
+								<li><a href="#"><img src="images/hr-icon1.svg" alt="link icon"> Выделенный сервер</a></li>
 							</ul>
 						</div>
-						<a href="#" class="btn login-btn">Войти</a>
 					</div>
 				</div>
 			</div>
 		</header>
 		<!-- header end -->
+		<div class="h93"></div>
 		<!-- Home start -->
 		<section id="home">
 			<div class="container">
@@ -116,6 +129,8 @@
 		</section>
 		<!-- Home end -->
 	</div>
+
+	<script src="js/main.min.js"></script>
 </body>
 
 </html>
