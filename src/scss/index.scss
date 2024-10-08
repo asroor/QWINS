@@ -732,7 +732,14 @@ header.open {
 			line-height: 100%;
 			width: 100%;
 			max-width: calc(100%/2);
-
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			column-gap: 3px;
+			height: 46px;
+			img {
+				display: block;
+			}
 			&.active {
 				background-color: #333;
 				border-radius: 10px;

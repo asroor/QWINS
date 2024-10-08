@@ -5,10 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>QWINS</title>
-	<!-- <link rel="stylesheet" href="libs/swiper.min.css"> -->
-
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="libs/swiper.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 </head>
 
@@ -214,8 +211,8 @@
 					<button type="button" onclick="showServerContent(this, 2)">Виртуальные сервера</button>
 				</div>
 				<div class="tabs-seria tabs-region">
-					<button type="button" class="active" onclick="showContentRegion(this, 1)">🇩🇪 Германия</button>
-					<button type="button" onclick="showContentRegion(this, 2)">🇫🇮 Финляндия</button>
+					<button type="button" class="active" onclick="showContentRegion(this, 1)"><img src="images/ge.svg" alt="DE flag" width="22"> Германия</button>
+					<button type="button" onclick="showContentRegion(this, 2)"><img src="images/fr.svg" alt="FR flag" width="22"> Финляндия</button>
 				</div>
 			</div>
 			<div class="tab-servet-content show" id="server-1">
@@ -3184,28 +3181,30 @@
 		</footer>
 		<!-- Footer	end -->
 	</div>
-	<!-- <script type="module" src="libs/swiper.min.js"></script> -->
-	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="libs/swiper.min.js"></script>
 	<script src="js/main.min.js"></script>
 	<script>
-
-
-
-		const swiper = new Swiper(".tariffs-slider", {
+		const swiper = new Swiper('.tariffs-slider', {
 			slidesPerView: 4.6,
 			spaceBetween: 10,
-			mousewheel: true
+			mousewheel: true,
 		});
 
 
 		const tariffMelect__menu = document.querySelectorAll('.tariff-select__menu');
+
+
 		tariffMelect__menu.forEach(item => {
 			item.addEventListener('mouseenter', () => {
-				swiper.mousewheel.disable()
+				swiper.forEach(item => {
+					item.mousewheel.disable()
+				})
 			});
+
 			item.addEventListener('mouseleave', () => {
-				swiper.mousewheel.enable()
+				swiper.forEach(item => {
+					item.mousewheel.enable()
+				})
 			});
 		});
 	</script>
