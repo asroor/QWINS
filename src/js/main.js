@@ -130,10 +130,27 @@ headerDropdown.addEventListener('click', () => {
         headerOpen = false;
     }
 });
+const langBtn = document.querySelector('.lang-btn');
+const dropdownItems = document.querySelectorAll('.dropdown-menu li');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+langBtn.addEventListener('click', () => {
+    closeBtn.style.display = 'block';
+    dropdownMenu.classList.add('show');
+});
+dropdownItems.forEach(item => {
+    const lang = item.getAttribute('lang');
+    item.addEventListener('click', () => {
+        if (lang) {
+            langBtn.value = lang;
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
 closeBtn.addEventListener('click', () => {
     header.classList.remove('open');
     headerBottom.style.height = '0px';
     headerBottom.style.opacity = '0';
     headerOpen = false;
     closeBtn.style.display = 'none';
+    dropdownMenu.classList.remove('show');
 });

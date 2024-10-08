@@ -40,6 +40,10 @@ img {
 	pointer-events: none !important;
 }
 
+button {
+	line-height: 100% !important;
+}
+
 :root {
 	--ff-gilroy: 'Gilroy', 'sans-serif';
 	--bg-def-dark: #0E0E0F;
@@ -249,8 +253,51 @@ header.open {
 }
 
 .lang-dropdown {
+	position: relative;
+
 	.dropdown-menu {
 		display: none;
+		opacity: 0;
+		position: absolute;
+		z-index: 3;
+		border-radius: 8px;
+		background: #333;
+		box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.21);
+
+		li {
+			list-style: none;
+			padding: 5px 16px;
+		}
+	}
+
+	.dropdown-menu.show {
+		display: block;
+		opacity: 1;
+	}
+}
+
+.dropdown-menu {
+	width: 177px;
+	padding: 10px 0;
+	top: calc(100% + 8px);
+	right: 0;
+
+	li {
+		width: 100%;
+
+		a {
+			display: flex;
+			align-items: center;
+			column-gap: 3px;
+			color: var(--bg-F8F8F8);
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 100%;
+		}
+
+		&:hover {
+			background-color: #4d4d4d;
+		}
 	}
 }
 
@@ -281,6 +328,8 @@ header.open {
 		flex-shrink: 0;
 	}
 }
+
+
 
 /*=======================
 	Home
@@ -707,6 +756,8 @@ header.open {
 	border-radius: 20px;
 	background: var(--bg-def-dark2);
 	padding: 16px;
+	width: 100%;
+	max-width: 330px;
 
 
 	.tariff-card__head {
@@ -857,8 +908,16 @@ header.open {
 }
 
 .tariffs-slider {
+	margin: 0 auto;
 	margin-top: 47px;
 	padding-bottom: 130px;
+	overflow: visible;
+	padding-left: 255px;
+	min-width: 1920px;
+	max-width: 1920px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .tariff-card__select.open .tariff-select__menu {
