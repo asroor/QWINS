@@ -1183,7 +1183,9 @@ header.open {
 		line-height: 22px;
 	}
 }
-
+.right-sieries__content.active {
+	height: auto;
+}
 /*======================
 	Footer
 =====================*/
@@ -1372,7 +1374,7 @@ footer {
 	}
 
 	.referral-home {
-		background-position: -240px 100%, -20px 100%, calc(100% + 28px) 120px;
+		background-position: -240px 100%, -20px 130%, calc(100% + 28px) 80px;
 		background-size: 1832px, 300px, 300px;
 
 		p {
@@ -1391,6 +1393,14 @@ footer {
 }
 
 @media (max-width: 991px) {
+	.privacy-left {
+		display: none;
+	}
+	.referral-home {
+		background-position: -240px -50%, -20px 130%, calc(100% + 28px) 150px;
+		background-size: 1832px, 240px, 240px;
+	}
+
 	.footer-series {
 		column-gap: 30px;
 		row-gap: 20px;
@@ -1453,6 +1463,7 @@ footer {
 	.tariffs-slider {
 		margin-bottom: 100px;
 	}
+
 	footer {
 		margin-bottom: 20px;
 	}
@@ -1467,10 +1478,14 @@ footer {
 		max-width: calc(50% - 8px);
 	}
 
-	.home-wrap {
+	.home-wrap:not(.referral-home) {
 		padding: 50px;
 		background-position: -110px 0, 135% 0;
 		background-size: 300px, 300px;
+	}
+
+	.referral-home {
+		padding: 50px;
 	}
 
 	.title-block .title {
@@ -1658,6 +1673,10 @@ footer {
 }
 
 @media (max-width: 550px) {
+	#privacy .privacy-wrapper {
+		padding: 20px;
+		padding-top: 30px;
+	}
 	.home-wrap {
 		background: var(--bg-def-dark2);
 	}
@@ -1679,19 +1698,51 @@ footer {
 		width: 100%;
 		height: fit-content;
 	}
+
+	.card-price {
+		max-width: 100%;
+	}
+
+	.referral-series-item {
+		padding: 20px;
+	}
+
+	.referral-home-card {
+		padding: 20px;
+	}
+
+	.referral-home-card h2 {
+		font-size: 22px;
+		margin-bottom: 5px;
+	}
+
+	.card-price h2 {
+		margin-left: 12px;
+		margin-bottom: 0;
+	}
 }
 
 @media (max-width: 500px) {
 	.footer-series .footer-series__item {
 		max-width: 100%;
 	}
-
+	.privacy-right .privacy__title {
+		font-size: 22px;
+	}
 	.btn {
 		padding: 15px 20px;
+	}
+
+	.accordion .accordion-head h3 {
+		font-size: 16px;
 	}
 }
 
 @media (max-width: 450px) {
+	footer .footer-wrap {
+		padding: 20px;
+	}
+
 	.home-wrap {
 		padding: 30px 20px;
 	}
@@ -1714,6 +1765,9 @@ footer {
 			}
 		}
 	}
+	.card-price h2 {
+		font-size: 18px;
+	}
 }
 
 @media (max-width: 400px) {
@@ -1724,7 +1778,11 @@ footer {
 	footer {
 		margin-bottom: 10px;
 	}
+
 	.tariffs-slider {
 		padding: 0 10px;
+	}
+	.referral-series-item {
+			font-size: 16px;
 	}
 }

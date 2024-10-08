@@ -27,8 +27,30 @@ function privacySeries(clickedItem, num) {
                 content.style.height = fullHeight; // Balandlikni to'liq balandlikka qo'yish
             }
         }
+        item.addEventListener('click', () => {
+            console.log('salom');
+        });
     });
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const mdAccElements = document.querySelectorAll('.md-acc');
+    mdAccElements.forEach((element) => {
+        element.addEventListener('click', function () {
+            const content = this.nextElementSibling; // keyin keluvchi right-sieries__content
+            // Agar ekran kengligi 991px dan kichik bo'lsa
+            if (window.innerWidth <= 991) {
+                // Barcha boshqa contentlarning balandligini kamaytiramiz
+                document.querySelectorAll('.right-sieries__content').forEach((el) => {
+                    if (el !== content) {
+                        el.style.height = '0'; // Yashirish
+                    }
+                });
+                const actualHeight = content.scrollHeight; // Balandlik o'lchovi
+                content.style.height = `${actualHeight}px`; // Balandlikni o'rnatamiz
+            }
+        });
+    });
+});
 // Funktsiya: Akkordeonni o'chirish va ochish
 function toggleAccordion(clickedHead) {
     const allAccordions = document.querySelectorAll('.accordion'); // Barcha akkordeonlarni tanlash
@@ -141,7 +163,7 @@ langBtn.addEventListener('click', () => {
     closeBtn.style.display = 'block';
     dropdownMenu.classList.add('show');
 });
-dropdownItems.forEach(item => {
+dropdownItems === null || dropdownItems === void 0 ? void 0 : dropdownItems.forEach(item => {
     const lang = item.getAttribute('lang');
     item.addEventListener('click', () => {
         if (lang) {
@@ -177,29 +199,33 @@ function showServerContent(button, serverId) {
     // Joriy tugmaga "active" sinfini qo'shish
     button.classList.add('active');
 }
-// Region kontentini boshqarish
-function showContentRegion(button, regionId) {
-    // Barcha region kontentlarini olish
-    const serverContentRegions = document.querySelectorAll('.tab-servet-content');
-    // Har bir server uchun tegishli region kontentini yangilash
-    serverContentRegions.forEach((content) => {
-        const regions = content.querySelectorAll('.server-content-region');
-        regions.forEach((region, index) => {
-            if (index === regionId - 1) {
-                region.classList.add('show'); // "show" klassini qo'shish
-            }
-            else {
-                region.classList.remove('show'); // "show" klassini olib tashlash
-            }
+try {
+    // Region kontentini boshqarish
+    function showContentRegion(button, regionId) {
+        // Barcha region kontentlarini olish
+        const serverContentRegions = document.querySelectorAll('.tab-servet-content');
+        // Har bir server uchun tegishli region kontentini yangilash
+        serverContentRegions.forEach((content) => {
+            const regions = content.querySelectorAll('.server-content-region');
+            regions.forEach((region, index) => {
+                if (index === regionId - 1) {
+                    region.classList.add('show'); // "show" klassini qo'shish
+                }
+                else {
+                    region.classList.remove('show'); // "show" klassini olib tashlash
+                }
+            });
         });
-    });
-    // Barcha region tugmalaridan "active" sinfini olib tashlash
-    document.querySelectorAll('.tabs-region button').forEach((btn) => {
-        btn.classList.remove('active');
-    });
-    // Joriy region tugmasiga "active" sinfini qo'shish
-    button.classList.add('active');
+        // Barcha region tugmalaridan "active" sinfini olib tashlash
+        document.querySelectorAll('.tabs-region button').forEach((btn) => {
+            btn.classList.remove('active');
+        });
+        // Joriy region tugmasiga "active" sinfini qo'shish
+        button.classList.add('active');
+    }
+    // Boshlang'ich sozlash
+    showServerContent(document.querySelector('.tabs-server button.active'), 1);
+    showContentRegion(document.querySelector('.tabs-region button.active'), 1);
 }
-// Boshlang'ich sozlash
-showServerContent(document.querySelector('.tabs-server button.active'), 1);
-showContentRegion(document.querySelector('.tabs-region button.active'), 1);
+catch (error) {
+}

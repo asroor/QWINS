@@ -6,7 +6,7 @@ function privacySeries(clickedItem: HTMLElement, num: number | null): void {
 		item.classList.remove('active');  // Barcha chap seriya elementlaridan 'active' ni olib tashlash
 		if (clickedItem === item) {
 			item.classList.add('active');  // Faqat bosilgan elementga 'active' qo'shish
-		} 
+		}
 	});
 
 	// O'ng seriya elementlari uchun 'active' klassini va balandlik o'tishini boshqarish
@@ -14,13 +14,11 @@ function privacySeries(clickedItem: HTMLElement, num: number | null): void {
 	rightSeriesItems.forEach(item => {
 		const itemAtr = item.getAttribute('data-number');  // data-number atributini olish
 		const content = item.querySelector('.right-sieries__content') as HTMLElement;  // O'ng seriya kontentini tanlash
-
 		// Barcha o'ng seriya elementlaridan 'active' ni olib tashlash va kontentini qisqartirish
 		item.classList.remove('active');
 		if (content) {
 			content.style.height = '0';  // Kontentni qisqartirish
 		}
-
 		// Bosilgan chap seriya elementiga mos o'ng seriya kontentini kengaytirish
 		if (num == itemAtr) {
 			item.classList.add('active');  // O'ng seriya elementiga 'active' qo'shish
@@ -29,8 +27,39 @@ function privacySeries(clickedItem: HTMLElement, num: number | null): void {
 				content.style.height = fullHeight;  // Balandlikni to'liq balandlikka qo'yish
 			}
 		}
+		item.addEventListener('click', () => {
+			console.log('salom');
+		})
 	});
 }
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	const mdAccElements = document.querySelectorAll<HTMLElement>('.md-acc');
+
+	mdAccElements.forEach((element) => {
+		element.addEventListener('click', function () {
+			const content = this.nextElementSibling as HTMLElement; // keyin keluvchi right-sieries__content
+
+			// Agar ekran kengligi 991px dan kichik bo'lsa
+			if (window.innerWidth <= 991) {
+				// Barcha boshqa contentlarning balandligini kamaytiramiz
+				document.querySelectorAll<HTMLElement>('.right-sieries__content').forEach((el) => {
+					if (el !== content) {
+						el.style.height = '0'; // Yashirish
+					}
+				});
+				const actualHeight = content.scrollHeight; // Balandlik o'lchovi
+				content.style.height = `${actualHeight}px`; // Balandlikni o'rnatamiz
+			}
+		});
+	});
+});
+
+
+
 
 // Funktsiya: Akkordeonni o'chirish va ochish
 function toggleAccordion(clickedHead: HTMLElement): void {
@@ -160,7 +189,7 @@ langBtn.addEventListener('click', () => {
 	dropdownMenu.classList.add('show');
 });
 
-dropdownItems.forEach(item => {
+dropdownItems?.forEach(item => {
 	const lang = item.getAttribute('lang');
 	item.addEventListener('click', () => {
 		if (lang) {
@@ -202,32 +231,37 @@ function showServerContent(button: HTMLElement, serverId: number): void {
 	button.classList.add('active');
 }
 
-// Region kontentini boshqarish
-function showContentRegion(button: HTMLElement, regionId: number): void {
-	// Barcha region kontentlarini olish
-	const serverContentRegions = document.querySelectorAll('.tab-servet-content');
+try {
+	// Region kontentini boshqarish
+	function showContentRegion(button: HTMLElement, regionId: number): void {
+		// Barcha region kontentlarini olish
+		const serverContentRegions = document.querySelectorAll('.tab-servet-content');
 
-	// Har bir server uchun tegishli region kontentini yangilash
-	serverContentRegions.forEach((content: Element) => {
-		const regions = (content as HTMLElement).querySelectorAll('.server-content-region');
-		regions.forEach((region: Element, index: number) => {
-			if (index === regionId - 1) {
-				(region as HTMLElement).classList.add('show'); // "show" klassini qo'shish
-			} else {
-				(region as HTMLElement).classList.remove('show'); // "show" klassini olib tashlash
-			}
+		// Har bir server uchun tegishli region kontentini yangilash
+		serverContentRegions.forEach((content: Element) => {
+			const regions = (content as HTMLElement).querySelectorAll('.server-content-region');
+			regions.forEach((region: Element, index: number) => {
+				if (index === regionId - 1) {
+					(region as HTMLElement).classList.add('show'); // "show" klassini qo'shish
+				} else {
+					(region as HTMLElement).classList.remove('show'); // "show" klassini olib tashlash
+				}
+			});
 		});
-	});
 
-	// Barcha region tugmalaridan "active" sinfini olib tashlash
-	document.querySelectorAll('.tabs-region button').forEach((btn: Element) => {
-		(btn as HTMLElement).classList.remove('active');
-	});
+		// Barcha region tugmalaridan "active" sinfini olib tashlash
+		document.querySelectorAll('.tabs-region button').forEach((btn: Element) => {
+			(btn as HTMLElement).classList.remove('active');
+		});
 
-	// Joriy region tugmasiga "active" sinfini qo'shish
-	button.classList.add('active');
+		// Joriy region tugmasiga "active" sinfini qo'shish
+		button.classList.add('active');
+	}
+
+	// Boshlang'ich sozlash
+	showServerContent(document.querySelector('.tabs-server button.active') as HTMLElement, 1);
+	showContentRegion(document.querySelector('.tabs-region button.active') as HTMLElement, 1);
+
+} catch (error) {
+
 }
-
-// Boshlang'ich sozlash
-showServerContent(document.querySelector('.tabs-server button.active') as HTMLElement, 1);
-showContentRegion(document.querySelector('.tabs-region button.active') as HTMLElement, 1);
