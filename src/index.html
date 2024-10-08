@@ -5,7 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>QWINS</title>
-	<link rel="stylesheet" href="libs/swiper.min.css">
+	<!-- <link rel="stylesheet" href="libs/swiper.min.css"> -->
+
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="css/main.min.css">
 </head>
 
@@ -206,482 +209,2845 @@
 				<h2 class="title">Наши тарифы</h2>
 			</div>
 			<div class="tariff-tabs">
-				<div class="tabs-seria">
-					<button type="button" class="active">Выделенный сервера</button>
-					<button type="button">Виртуальные сервера</button>
+				<div class="tabs-seria tabs-server">
+					<button type="button" class="active" onclick="showServerContent(this, 1)">Выделенный сервера</button>
+					<button type="button" onclick="showServerContent(this, 2)">Виртуальные сервера</button>
 				</div>
-				<div class="tabs-seria">
-					<button type="button" class="active">🇩🇪 Германия</button>
-					<button type="button">🇫🇮 Финляндия</button>
+				<div class="tabs-seria tabs-region">
+					<button type="button" class="active" onclick="showContentRegion(this, 1)">🇩🇪 Германия</button>
+					<button type="button" onclick="showContentRegion(this, 2)">🇫🇮 Финляндия</button>
 				</div>
 			</div>
-			<div class="swiper tariffs-slider">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="tariff-card">
-							<div class="tariff-card__head">
-								<spam class="tag">Promo</spam>
-								<h3>2 $ /месяц</h3>
-							</div>
-							<div class="tariff-card__about">
-								<div class="about__item">
-									<h3>CPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">AMD Ryzen 9 5950X</h3>
-									<div class="toltip">
-										<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-										<span class="info-toltip">
-											Assalomu alaykum
-										</span>
+			<div class="tab-servet-content show" id="server-1">
+				<div class="server-content-region show">
+					<div class="swiper tariffs-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>21.1 $ /месяц</h3>
 									</div>
-								</div>
-								<div class="about__item">
-									<h3>vCPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">x1</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>RAM</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">1 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Объём</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">10 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Защита DDoS-атак</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">2 тб/с.</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
 								</div>
 							</div>
-							<div class="tariff-card__bottom">
-								<h4>Операционная система</h4>
-								<div class="tariff-card__select">
-									<div class="select">
-										<h2>Windows server 2019</h2>
-										<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-											class="select-down-icon">
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
 									</div>
-									<div class="tariff-select__menu">
-										<ul>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-										</ul>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
 									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
 								</div>
 							</div>
-							<a href="#" class="btn tariff-card__btn">Заказать</a>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="tariff-card">
-							<div class="tariff-card__head">
-								<spam class="tag">Promo</spam>
-								<h3>2 $ /месяц</h3>
-							</div>
-							<div class="tariff-card__about">
-								<div class="about__item">
-									<h3>CPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">AMD Ryzen 9 5950X</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>vCPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">x1</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>RAM</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">1 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Объём</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">10 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Защита DDoS-атак</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">2 тб/с.</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-							</div>
-							<div class="tariff-card__bottom">
-								<h4>Операционная система</h4>
-								<div class="tariff-card__select">
-									<div class="select">
-										<h2>Windows server 2019</h2>
-										<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-											class="select-down-icon">
+				</div>
+				<div class="server-content-region">
+					<div class="swiper tariffs-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>21.2 $ /месяц</h3>
 									</div>
-									<div class="tariff-select__menu">
-										<ul>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-										</ul>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
 									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
 								</div>
 							</div>
-							<a href="#" class="btn tariff-card__btn">Заказать</a>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="tariff-card">
-							<div class="tariff-card__head">
-								<spam class="tag">Promo</spam>
-								<h3>2 $ /месяц</h3>
-							</div>
-							<div class="tariff-card__about">
-								<div class="about__item">
-									<h3>CPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">AMD Ryzen 9 5950X</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>vCPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">x1</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>RAM</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">1 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Объём</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">10 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Защита DDoS-атак</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">2 тб/с.</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-							</div>
-							<div class="tariff-card__bottom">
-								<h4>Операционная система</h4>
-								<div class="tariff-card__select">
-									<div class="select">
-										<h2>Windows server 2019</h2>
-										<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-											class="select-down-icon">
+				</div>
+			</div>
+			<div class="tab-servet-content" id="server-2">
+				<div class="server-content-region show">
+					<div class="swiper tariffs-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>22.1 $ /месяц</h3>
 									</div>
-									<div class="tariff-select__menu">
-										<ul>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-										</ul>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
 									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
 								</div>
 							</div>
-							<a href="#" class="btn tariff-card__btn">Заказать</a>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="tariff-card">
-							<div class="tariff-card__head">
-								<spam class="tag">Promo</spam>
-								<h3>2 $ /месяц</h3>
-							</div>
-							<div class="tariff-card__about">
-								<div class="about__item">
-									<h3>CPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">AMD Ryzen 9 5950X</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>vCPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">x1</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>RAM</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">1 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Объём</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">10 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Защита DDoS-атак</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">2 тб/с.</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-							</div>
-							<div class="tariff-card__bottom">
-								<h4>Операционная система</h4>
-								<div class="tariff-card__select">
-									<div class="select">
-										<h2>Windows server 2019</h2>
-										<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-											class="select-down-icon">
+				</div>
+				<div class="server-content-region">
+					<div class="swiper tariffs-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>22.2 $ /месяц</h3>
 									</div>
-									<div class="tariff-select__menu">
-										<ul>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-										</ul>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
 									</div>
-								</div>
-							</div>
-							<a href="#" class="btn tariff-card__btn">Заказать</a>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="tariff-card">
-							<div class="tariff-card__head">
-								<spam class="tag">Promo</spam>
-								<h3>2 $ /месяц</h3>
-							</div>
-							<div class="tariff-card__about">
-								<div class="about__item">
-									<h3>CPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">AMD Ryzen 9 5950X</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>vCPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">x1</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>RAM</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">1 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Объём</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">10 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Защита DDoS-атак</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">2 тб/с.</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-							</div>
-							<div class="tariff-card__bottom">
-								<h4>Операционная система</h4>
-								<div class="tariff-card__select">
-									<div class="select">
-										<h2>Windows server 2019</h2>
-										<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-											class="select-down-icon">
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
 									</div>
-									<div class="tariff-select__menu">
-										<ul>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-										</ul>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
 									</div>
-								</div>
-							</div>
-							<a href="#" class="btn tariff-card__btn">Заказать</a>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="tariff-card">
-							<div class="tariff-card__head">
-								<spam class="tag">Promo</spam>
-								<h3>2 $ /месяц</h3>
-							</div>
-							<div class="tariff-card__about">
-								<div class="about__item">
-									<h3>CPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">AMD Ryzen 9 5950X</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>vCPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">x1</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>RAM</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">1 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Объём</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">10 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Защита DDoS-атак</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">2 тб/с.</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-							</div>
-							<div class="tariff-card__bottom">
-								<h4>Операционная система</h4>
-								<div class="tariff-card__select">
-									<div class="select">
-										<h2>Windows server 2019</h2>
-										<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-											class="select-down-icon">
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
 									</div>
-									<div class="tariff-select__menu">
-										<ul>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-										</ul>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
 									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
 								</div>
 							</div>
-							<a href="#" class="btn tariff-card__btn">Заказать</a>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="tariff-card">
-							<div class="tariff-card__head">
-								<spam class="tag">Promo</spam>
-								<h3>2 $ /месяц</h3>
-							</div>
-							<div class="tariff-card__about">
-								<div class="about__item">
-									<h3>CPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">AMD Ryzen 9 5950X</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>vCPU</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">x1</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>RAM</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">1 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Объём</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">10 ГБ</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-								<div class="about__item">
-									<h3>Защита DDoS-атак</h3>
-									<span class="bottom-line"></span>
-									<h3 class="white">2 тб/с.</h3>
-									<img src="images/info.svg" alt="info icon" width="20" height="20" class="info-icon">
-								</div>
-							</div>
-							<div class="tariff-card__bottom">
-								<h4>Операционная система</h4>
-								<div class="tariff-card__select">
-									<div class="select">
-										<h2>Windows server 2019</h2>
-										<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-											class="select-down-icon">
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
 									</div>
-									<div class="tariff-select__menu">
-										<ul>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-											<li>Windows server 2016</li>
-										</ul>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
 									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
 								</div>
 							</div>
-							<a href="#" class="btn tariff-card__btn">Заказать</a>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="tariff-card">
+									<div class="tariff-card__head">
+										<spam class="tag">Promo</spam>
+										<h3>2 $ /месяц</h3>
+									</div>
+									<div class="tariff-card__about">
+										<div class="about__item">
+											<h3>CPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">AMD Ryzen 9 5950X</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>vCPU</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">x1</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>RAM</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">1 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Объём</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">10 ГБ</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+										<div class="about__item">
+											<h3>Защита DDoS-атак</h3>
+											<span class="bottom-line"></span>
+											<h3 class="white">2 тб/с.</h3>
+											<div class="toltip">
+												<div class="info-icon">
+													<img src="images/info.svg" alt="info icon" width="20" height="20">
+												</div>
+												<span class="info-toltip">
+													Assalomu alaykum
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="tariff-card__bottom">
+										<h4>Операционная система</h4>
+										<div class="tariff-card__select">
+											<div class="select">
+												<h2>Windows server 2019</h2>
+												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon">
+											</div>
+											<div class="tariff-select__menu">
+												<ul>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+													<li>Windows server 2016</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="btn tariff-card__btn">Заказать</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- Tariffs end -->
-
 		<!-- FAQ start -->
 		<section id="faq">
 			<div class="container">
@@ -818,13 +3184,29 @@
 		</footer>
 		<!-- Footer	end -->
 	</div>
-	<script src="libs/swiper.min.js"></script>
+	<!-- <script type="module" src="libs/swiper.min.js"></script> -->
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="js/main.min.js"></script>
 	<script>
-		var swiper = new Swiper(".tariffs-slider", {
+
+
+
+		const swiper = new Swiper(".tariffs-slider", {
 			slidesPerView: 4.6,
 			spaceBetween: 10,
-			mousewheel: true,
+			mousewheel: true
+		});
+
+
+		const tariffMelect__menu = document.querySelectorAll('.tariff-select__menu');
+		tariffMelect__menu.forEach(item => {
+			item.addEventListener('mouseenter', () => {
+				swiper.mousewheel.disable()
+			});
+			item.addEventListener('mouseleave', () => {
+				swiper.mousewheel.enable()
+			});
 		});
 	</script>
 </body>

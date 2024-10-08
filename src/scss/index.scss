@@ -591,6 +591,7 @@ header.open {
 
 .toltip {
 	position: relative;
+	z-index: 100;
 
 	.info-toltip {
 		display: block;
@@ -608,11 +609,11 @@ header.open {
 		display: none;
 		opacity: 0;
 	}
-}
 
-.info-icon:hover+.toltip .info-toltip {
-	display: block;
-	opacity: 1;
+	.info-icon:hover~.info-toltip {
+		display: block;
+		opacity: 1;
+	}
 }
 
 .machine-taps {
@@ -907,10 +908,30 @@ header.open {
 	}
 }
 
+.server-content-region {
+	opacity: 0;
+	display: none;
+}
+
+.server-content-region.show {
+	display: block;
+	opacity: 1;
+}
+
+.tab-servet-content {
+	opacity: 0;
+	display: none;
+}
+
+.tab-servet-content.show {
+	display: block;
+	opacity: 1;
+}
+
 .tariffs-slider {
 	margin: 0 auto;
 	margin-top: 47px;
-	padding-bottom: 130px;
+	margin-bottom: 130px;
 	overflow: visible;
 	padding-left: 255px;
 	min-width: 1920px;
@@ -921,7 +942,7 @@ header.open {
 }
 
 .tariff-card__select.open .tariff-select__menu {
-	max-height: 200px;
+	height: 200px !important;
 	opacity: 1;
 }
 

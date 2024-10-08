@@ -1,100 +1,88 @@
+// Funktsiya: Saralashni boshqarish
 function privacySeries(clickedItem: HTMLElement, num: number | null): void {
-	// Manage active class for left series items
+	// Chap seriyalar elementlari uchun 'active' klassini boshqarish
 	const leftSeriesItems = document.querySelectorAll('.left-sieries li') as NodeListOf<HTMLLIElement>;
 	leftSeriesItems.forEach(item => {
-		item.classList.remove('active');  // Remove 'active' from all left-series items
+		item.classList.remove('active');  // Barcha chap seriya elementlaridan 'active' ni olib tashlash
 		if (clickedItem === item) {
-			item.classList.add('active');  // Add 'active' only to the clicked item
-		}
+			item.classList.add('active');  // Faqat bosilgan elementga 'active' qo'shish
+		} 
 	});
 
-	// Manage active class and height transition for right series items
+	// O'ng seriya elementlari uchun 'active' klassini va balandlik o'tishini boshqarish
 	const rightSeriesItems = document.querySelectorAll('.right-series__item') as NodeListOf<HTMLElement>;
 	rightSeriesItems.forEach(item => {
-		const itemAtr = item.getAttribute('data-number');  // Get the data-number attribute
-		const content = item.querySelector('.right-sieries__content') as HTMLElement;  // Select the right-series content
+		const itemAtr = item.getAttribute('data-number');  // data-number atributini olish
+		const content = item.querySelector('.right-sieries__content') as HTMLElement;  // O'ng seriya kontentini tanlash
 
-		// Remove 'active' class from all right series items and collapse their content
+		// Barcha o'ng seriya elementlaridan 'active' ni olib tashlash va kontentini qisqartirish
 		item.classList.remove('active');
 		if (content) {
-			content.style.height = '0';  // Collapse content
+			content.style.height = '0';  // Kontentni qisqartirish
 		}
 
-		// Add 'active' class and expand the clicked item's content
+		// Bosilgan chap seriya elementiga mos o'ng seriya kontentini kengaytirish
 		if (num == itemAtr) {
-			item.classList.add('active');  // Add 'active' to the right-series item that matches the clicked left-series item
+			item.classList.add('active');  // O'ng seriya elementiga 'active' qo'shish
 			if (content) {
-				// Measure the actual height of the content
-				const fullHeight = content.scrollHeight + 'px';
-				content.style.height = fullHeight;  // Set the height to the full height
+				const fullHeight = content.scrollHeight + 'px';  // Kontentning to'liq balandligini o'lchash
+				content.style.height = fullHeight;  // Balandlikni to'liq balandlikka qo'yish
 			}
 		}
 	});
 }
 
-
-
+// Funktsiya: Akkordeonni o'chirish va ochish
 function toggleAccordion(clickedHead: HTMLElement): void {
-	const allAccordions = document.querySelectorAll('.accordion'); // Select all accordions
-	const clickedAccordion = clickedHead.parentElement; // Get the parent .accordion of the clicked head
+	const allAccordions = document.querySelectorAll('.accordion'); // Barcha akkordeonlarni tanlash
+	const clickedAccordion = clickedHead.parentElement; // Bosilgan sarlavha elementining ota .accordionini olish
 	const clickedContent = clickedAccordion?.querySelector('.accordion-content') as HTMLElement;
 
-	if (!clickedContent) return; // Exit if no content found
+	if (!clickedContent) return; // Agar kontent topilmasa, chiqib ketish
 
-	// Close all accordions except the clicked one
+	// Faqat bosilgan akkordeondan tashqari barcha akkordeonlarni yopish
 	allAccordions.forEach(accordion => {
 		const content = accordion.querySelector('.accordion-content') as HTMLElement;
 		if (accordion !== clickedAccordion) {
-			accordion.classList.remove('active'); // Remove active class from other accordions
-			content.style.height = '0'; // Collapse the content
+			accordion.classList.remove('active'); // Boshqa akkordeonlardan 'active' ni olib tashlash
+			content.style.height = '0'; // Kontentni qisqartirish
 		}
 	});
 
-	// Toggle the clicked accordion
+	// Bosilgan akkordeonni o'zgartirish
 	clickedAccordion?.classList.toggle('active');
 	if (clickedAccordion?.classList.contains('active')) {
-		const fullHeight = clickedContent.scrollHeight + 'px'; // Get full height of the content
-		clickedContent.style.height = fullHeight; // Expand the clicked accordion
+		const fullHeight = clickedContent.scrollHeight + 'px'; // Kontentning to'liq balandligini olish
+		clickedContent.style.height = fullHeight; // Bosilgan akkordeonni kengaytirish
 	} else {
-		clickedContent.style.height = '0'; // Collapse the clicked accordion if it's active
+		clickedContent.style.height = '0'; // Agar akkordeon aktiv bo'lsa, qisqartirish
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-// Function to handle the opening/closing of the select menu
+// Funktsiya: Tanlov menyusini o'chirish va ochish
 function toggleSelectMenu(event: Event): void {
 	const selectDiv = event.currentTarget as HTMLElement;
-	const tariffCardSelect = selectDiv.closest('.tariff-card__select') as HTMLElement | null; // Cast to HTMLElement | null
-	const selectMenu = tariffCardSelect?.querySelector('.tariff-select__menu') as HTMLElement | null; // Cast to HTMLElement | null
+	const tariffCardSelect = selectDiv.closest('.tariff-card__select') as HTMLElement | null; // HTMLElement yoki null sifatida
+	const selectMenu = tariffCardSelect?.querySelector('.tariff-select__menu') as HTMLElement | null; // HTMLElement yoki null sifatida
 
-	if (!selectMenu) return; // Exit if no menu found
+	if (!selectMenu) return; // Agar menyu topilmasa, chiqib ketish
 
-	// Close all other open menus first
+	// Boshqa ochiq menyularni yopish
 	closeOtherMenus(tariffCardSelect);
 
-	// Toggle the 'open' class for the clicked item
+	// Bosilgan element uchun 'open' klassini o'zgartirish
 	tariffCardSelect?.classList.toggle('open');
 
-	// Set height dynamically for smooth transition
+	// Silliq o'tish uchun balandlikni dinamik sozlash
 	if (tariffCardSelect?.classList.contains('open')) {
-		const fullHeight = selectMenu.scrollHeight + 'px'; // Get the full height of the content
-		selectMenu.style.height = fullHeight; // Set height to expand
+		const fullHeight = selectMenu.scrollHeight + 'px'; // Kontentning to'liq balandligini olish
+		selectMenu.style.height = fullHeight; // Kengaytirilgan balandlikni qo'yish
 	} else {
-		selectMenu.style.height = '0'; // Collapse the menu
+		selectMenu.style.height = '0'; // Menyuni qisqartirish
 	}
 }
 
-// Function to close other open menus
+// Funktsiya: Boshqa ochiq menyularni yopish
 function closeOtherMenus(currentSelect: HTMLElement | null): void {
 	const allSelects = document.querySelectorAll('.tariff-card__select') as NodeListOf<HTMLElement>;
 
@@ -103,87 +91,143 @@ function closeOtherMenus(currentSelect: HTMLElement | null): void {
 			select.classList.remove('open');
 			const menu = select.querySelector('.tariff-select__menu') as HTMLElement | null;
 			if (menu) {
-				menu.style.height = '0'; // Collapse any open menus
+				menu.style.height = '0'; // Ochiq menyularni qisqartirish
 			}
 		}
 	});
 }
 
-// Function to handle selecting an option from the dropdown menu
+// Funktsiya: Tanlov menyusidan variant tanlashni boshqarish
 function selectOption(event: Event): void {
 	const selectedItem = event.currentTarget as HTMLElement;
-	const tariffCardSelect = selectedItem.closest('.tariff-card__select') as HTMLElement | null; // Cast to HTMLElement | null
+	const tariffCardSelect = selectedItem.closest('.tariff-card__select') as HTMLElement | null; // HTMLElement yoki null sifatida
 	const h2Element = tariffCardSelect?.querySelector('.select h2') as HTMLElement | null;
 
 	if (h2Element) {
-		h2Element.textContent = selectedItem.textContent; // Replace h2 text with the selected option
+		h2Element.textContent = selectedItem.textContent; // h2 matnini tanlangan variant bilan almashtirish
 	}
 
-	// Close the menu after selection
+	// Tanlovdan so'ng menyuni yopish
 	const selectMenu = tariffCardSelect?.querySelector('.tariff-select__menu') as HTMLElement | null;
 	tariffCardSelect?.classList.remove('open');
 	if (selectMenu) {
-		selectMenu.style.height = '0'; // Collapse the menu after selection
+		selectMenu.style.height = '0'; // Tanlovdan so'ng menyuni qisqartirish
 	}
 }
 
-// Add event listener for opening/closing the select menu
+// Tanlov menyusini ochish/yopish uchun hodisalar qo'shish
 document.querySelectorAll('.tariff-card__select .select').forEach(selectDiv => {
 	selectDiv.addEventListener('click', toggleSelectMenu);
 });
 
-// Add event listener for selecting an option
+// Variant tanlash uchun hodisalar qo'shish
 document.querySelectorAll('.tariff-select__menu li').forEach(option => {
 	option.addEventListener('click', selectOption);
 });
 
-const closeBtn = document.querySelector('.close-btn') as HTMLElement
-const headerDropdown = document.querySelector('.header-dropdown') as HTMLLIElement
-const headerBottom = document.querySelector('.header-bottom') as HTMLElement
+// Yopish tugmasini va boshqarish elementlarini tanlash
+const closeBtn = document.querySelector('.close-btn') as HTMLElement;
+const headerDropdown = document.querySelector('.header-dropdown') as HTMLLIElement;
+const headerBottom = document.querySelector('.header-bottom') as HTMLElement;
 
-let headerOpen = false
-const header = document.querySelector('header') as HTMLElement
+let headerOpen = false;
+const header = document.querySelector('header') as HTMLElement;
+
+// Boshqarish tugmasiga hodisa qo'shish
 headerDropdown.addEventListener('click', () => {
 	closeBtn.style.display = 'block';
-	let HTheaderBottom = headerBottom.scrollHeight + 'px'
-	if (headerOpen == false) {
-		header.classList.add('open')
-		headerBottom.style.opacity = '1'
-		headerBottom.style.height = HTheaderBottom
-		headerOpen = true
+	let HTheaderBottom = headerBottom.scrollHeight + 'px';
+	if (!headerOpen) {
+		header.classList.add('open');
+		headerBottom.style.opacity = '1';
+		headerBottom.style.height = HTheaderBottom;
+		headerOpen = true;
 	} else {
-		header.classList.remove('open')
-		headerBottom.style.height = '0px'
-		headerBottom.style.opacity = '0'
-		headerOpen = false
+		header.classList.remove('open');
+		headerBottom.style.height = '0px';
+		headerBottom.style.opacity = '0';
+		headerOpen = false;
 	}
-})
+});
 
+// Til tanlash tugmasi va menyusini boshqarish
+const langBtn = document.querySelector('.lang-btn') as HTMLInputElement;
+const dropdownItems = document.querySelectorAll('.dropdown-menu li') as NodeListOf<HTMLLIElement>;
+const dropdownMenu = document.querySelector('.dropdown-menu') as HTMLElement;
 
-
-const langBtn = document.querySelector('.lang-btn') as HTMLInputElement
-const dropdownItems = document.querySelectorAll('.dropdown-menu li') as NodeListOf<HTMLLIElement>
-const dropdownMenu = document.querySelector('.dropdown-menu') as HTMLElement
 langBtn.addEventListener('click', () => {
-	closeBtn.style.display = 'block'
-	dropdownMenu.classList.add('show')
-})
+	closeBtn.style.display = 'block';
+	dropdownMenu.classList.add('show');
+});
+
 dropdownItems.forEach(item => {
-	const lang = item.getAttribute('lang')
+	const lang = item.getAttribute('lang');
 	item.addEventListener('click', () => {
 		if (lang) {
-			langBtn.value = lang
-			dropdownMenu.classList.remove('show')
+			langBtn.value = lang;
+			dropdownMenu.classList.remove('show');
 		}
-	})
-})
+	});
+});
 
-
+// Yopish tugmasi uchun hodisa qo'shish
 closeBtn.addEventListener('click', () => {
-	header.classList.remove('open')
-	headerBottom.style.height = '0px'
-	headerBottom.style.opacity = '0'
-	headerOpen = false
+	header.classList.remove('open');
+	headerBottom.style.height = '0px';
+	headerBottom.style.opacity = '0';
+	headerOpen = false;
 	closeBtn.style.display = 'none';
-	dropdownMenu.classList.remove('show')
-})
+	dropdownMenu.classList.remove('show');
+});
+
+// Server kontentini boshqarish
+function showServerContent(button: HTMLElement, serverId: number): void {
+	// Barcha server kontentlarini yashirish
+	document.querySelectorAll('.tab-servet-content').forEach((content: Element) => {
+		content.classList.remove('show'); // "show" klassini olib tashlash
+	});
+
+	// Faollashtirilgan server kontentini ko'rsatish
+	const activeContent = document.getElementById(`server-${serverId}`);
+	if (activeContent) {
+		activeContent.classList.add('show'); // "show" klassini qo'shish
+	}
+
+	// Barcha tugmalardan "active" sinfini olib tashlash
+	document.querySelectorAll('.tabs-server button').forEach((btn: Element) => {
+		(btn as HTMLElement).classList.remove('active');
+	});
+
+	// Joriy tugmaga "active" sinfini qo'shish
+	button.classList.add('active');
+}
+
+// Region kontentini boshqarish
+function showContentRegion(button: HTMLElement, regionId: number): void {
+	// Barcha region kontentlarini olish
+	const serverContentRegions = document.querySelectorAll('.tab-servet-content');
+
+	// Har bir server uchun tegishli region kontentini yangilash
+	serverContentRegions.forEach((content: Element) => {
+		const regions = (content as HTMLElement).querySelectorAll('.server-content-region');
+		regions.forEach((region: Element, index: number) => {
+			if (index === regionId - 1) {
+				(region as HTMLElement).classList.add('show'); // "show" klassini qo'shish
+			} else {
+				(region as HTMLElement).classList.remove('show'); // "show" klassini olib tashlash
+			}
+		});
+	});
+
+	// Barcha region tugmalaridan "active" sinfini olib tashlash
+	document.querySelectorAll('.tabs-region button').forEach((btn: Element) => {
+		(btn as HTMLElement).classList.remove('active');
+	});
+
+	// Joriy region tugmasiga "active" sinfini qo'shish
+	button.classList.add('active');
+}
+
+// Boshlang'ich sozlash
+showServerContent(document.querySelector('.tabs-server button.active') as HTMLElement, 1);
+showContentRegion(document.querySelector('.tabs-region button.active') as HTMLElement, 1);
