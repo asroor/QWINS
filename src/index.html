@@ -127,8 +127,8 @@
 					<button type="button">Vz Linux</button>
 				</div>
 				<div class="tab-contents">
-					<div class="row">
-						<div class="col-md-3">
+					<div class="row g-3">
+						<div class="col-xl-3 col-md-6 col-sm-6">
 							<div class="tab-card">
 								<div class="tab-card__head">
 									<div class="tab-head__icon">
@@ -146,7 +146,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-md-3">
+						<div class="col-xl-3 col-md-6 col-sm-6">
 							<div class="tab-card">
 								<div class="tab-card__head">
 									<div class="tab-head__icon">
@@ -162,7 +162,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-md-3">
+						<div class="col-xl-3 col-md-6 col-sm-6">
 							<div class="tab-card">
 								<div class="tab-card__head">
 									<div class="tab-head__icon" style=" padding: 2px 1px 2px 3px;">
@@ -180,7 +180,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-md-3">
+						<div class="col-xl-3 col-md-6 col-sm-6">
 							<div class="tab-card">
 								<div class="tab-card__head">
 									<div class="tab-head__icon">
@@ -211,8 +211,10 @@
 					<button type="button" onclick="showServerContent(this, 2)">Виртуальные сервера</button>
 				</div>
 				<div class="tabs-seria tabs-region">
-					<button type="button" class="active" onclick="showContentRegion(this, 1)"><img src="images/ge.svg" alt="DE flag" width="22"> Германия</button>
-					<button type="button" onclick="showContentRegion(this, 2)"><img src="images/fr.svg" alt="FR flag" width="22"> Финляндия</button>
+					<button type="button" class="active" onclick="showContentRegion(this, 1)"><img src="images/ge.svg"
+							alt="DE flag" width="22"> Германия</button>
+					<button type="button" onclick="showContentRegion(this, 2)"><img src="images/fr.svg" alt="FR flag" width="22">
+						Финляндия</button>
 				</div>
 			</div>
 			<div class="tab-servet-content show" id="server-1">
@@ -3050,8 +3052,8 @@
 			<div class="container">
 				<h2 class="faq-title">FAQ</h2>
 				<div class="faq-wrapper">
-					<div class="row">
-						<div class="col-md-6">
+					<div class="row g-lg-3 g-2">
+						<div class="col-lg-6 col-12">
 							<div class="faq-accordions">
 								<div class="accordion">
 									<div class="accordion-head" onclick="toggleAccordion(this)">
@@ -3095,23 +3097,27 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-3">
-							<div class="faq-card">
-								<div>
-									<h3>База знаний</h3>
-									<p>Наша команда собрала здесь полезные советы.</p>
+						<div class="col-lg-6">
+							<div class="row g-2">
+								<div class="col-md-6">
+									<div class="faq-card">
+										<div>
+											<h3>База знаний</h3>
+											<p>Наша команда собрала здесь полезные советы.</p>
+										</div>
+										<a href="#">Перейти</a>
+									</div>
 								</div>
-								<a href="#">Перейти</a>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="faq-card">
-								<div>
-									<h3>Не нашли ответ на свой
-										вопрос?</h3>
-									<p>Задайте его нам на портале поддержки, и мы оперативно ответим.</p>
+								<div class="col-md-6">
+									<div class="faq-card">
+										<div>
+											<h3>Не нашли ответ на свой
+												вопрос?</h3>
+											<p>Задайте его нам на портале поддержки, и мы оперативно ответим.</p>
+										</div>
+										<a href="#">Задать вопрос</a>
+									</div>
 								</div>
-								<a href="#">Задать вопрос</a>
 							</div>
 						</div>
 					</div>
@@ -3185,9 +3191,34 @@
 	<script src="js/main.min.js"></script>
 	<script>
 		const swiper = new Swiper('.tariffs-slider', {
-			slidesPerView: 4.6,
-			spaceBetween: 10,
 			mousewheel: true,
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+				450: {
+					slidesPerView: 1.2,
+				},
+				521: {
+					slidesPerView: 1.5,
+				},
+				651: {
+					slidesPerView: 2,
+				},
+				768: {
+					slidesPerView: 2.2,
+				},
+				992: {
+					slidesPerView: 2.9,
+				},
+				1200: {
+					slidesPerView: 3.3,
+				},
+				1440: {
+					slidesPerView: 4,
+				}
+			}
 		});
 
 
