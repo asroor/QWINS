@@ -1450,6 +1450,12 @@ footer {
 }
 
 @media (max-width:767px) {
+	.tariffs-slider {
+		margin-bottom: 100px;
+	}
+	footer {
+		margin-bottom: 20px;
+	}
 
 	.home-card:last-child,
 	.home-card:nth-child(3) {
@@ -1712,6 +1718,13 @@ footer {
 
 @media (max-width: 400px) {
 	.container {
+		padding: 0 10px;
+	}
+
+	footer {
+		margin-bottom: 10px;
+	}
+	.tariffs-slider {
 		padding: 0 10px;
 	}
 }
