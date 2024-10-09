@@ -443,6 +443,12 @@ header.open {
 	}
 }
 
+.home-card .home-card__about h2 {
+	span {
+		background: #343434;
+	}
+}
+
 .home-cards {
 	display: flex;
 	align-items: flex-start;
@@ -676,10 +682,10 @@ header.open {
 		line-height: 100%;
 		border: none;
 		background-color: transparent;
+		border-radius: 10px;
 
 		&.active {
 			background-color: #333;
-			border-radius: inherit;
 		}
 	}
 }
@@ -778,6 +784,7 @@ header.open {
 			justify-content: center;
 			column-gap: 3px;
 			height: 46px;
+			border-radius: 10px;
 
 			img {
 				display: block;
@@ -785,7 +792,6 @@ header.open {
 
 			&.active {
 				background-color: #333;
-				border-radius: 10px;
 			}
 		}
 

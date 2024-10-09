@@ -102,3 +102,7 @@ body {
 .home-wrap {
 	background-image: url(../images/lg-home-bg1.svg), url(../images/lg-home-bg2.svg);
 }
+
+.home-card .home-card__about h2 span {
+	background: rgba(230, 230, 230, 1);
+}

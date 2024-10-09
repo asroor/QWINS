@@ -86,7 +86,7 @@
 					</div>
 					<div class="home-card">
 						<div class="home-card__about">
-							<h2>Работа на 100%</h2>
+							<h2>Работа на <span>100%</span></h2>
 							<p>Арендуя сервер, вы можете быть уверены
 								в полном доступе к его ресурсам на 100%.</p>
 						</div>
@@ -126,99 +126,209 @@
 		<!-- Machine start -->
 		<section id="machine">
 			<div class="container">
-				<div class="title-block">
-					<h2 class="title">Готовые образы виртуальных машин</h2>
-					<h3 class="title-txt">Создайте виртуальную машину из готового образа или загрузите собственный</h3>
-				</div>
-				<div class="machine-taps">
-					<button type="button" class="active">Ubuntu</button>
-					<button type="button">Debain</button>
-					<button type="button">Windows</button>
-					<button type="button">Alma Linux</button>
-					<button type="button">FreeBSD</button>
-					<button type="button">CentOS</button>
-					<button type="button">Astra Linux</button>
-					<button type="button">Oracle Linux</button>
-					<button type="button">Rocky Linux</button>
-					<button type="button">Vz Linux</button>
-				</div>
-				<div class="tab-contents">
-					<div class="row g-3">
-						<div class="col-xl-3 col-md-6 col-sm-6">
-							<div class="tab-card">
-								<div class="tab-card__head">
-									<div class="tab-head__icon">
-										<img src="images/ubuntu.svg" alt="ubuntu icon" width="100%" height="100%"
-											style="margin-left: -1.2px;" dark>
-										<img src="images/light-os4.svg" alt="ubuntu icon" width="100%" height="100%"
-											style="margin-left: -1.2px;" light>
-									</div>
-									<h2>Ubuntu</h2>
-								</div>
-								<ul class="version-list">
-									<li>ubuntu 16.04</li>
-									<li>ubuntu 18.04</li>
-									<li>ubuntu 20.04</li>
-									<li>ubuntu 22.04</li>
-									<li>ubuntu 24.04</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xl-3 col-md-6 col-sm-6">
-							<div class="tab-card">
-								<div class="tab-card__head">
-									<div class="tab-head__icon">
-										<img src="images/debain.svg" alt="debain icon" width="100%" height="100%" dark>
-										<img src="images/light-os1.svg" alt="debain icon" width="100%" height="100%" light>
-									</div>
-									<h2>Debain</h2>
-								</div>
-								<ul class="version-list">
-									<li>debain 9</li>
-									<li>debain 10</li>
-									<li>debain 11</li>
-									<li>debain 12</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xl-3 col-md-6 col-sm-6">
-							<div class="tab-card">
-								<div class="tab-card__head">
-									<div class="tab-head__icon" style=" padding: 2px 1px 2px 3px;">
-										<img src="images/windows.svg" alt="windows icon" width="100%" height="100%" dark>
-										<img src="images/light-os2.svg" alt="windows icon" width="100%" height="100%" light>
-									</div>
-									<h2>Windows</h2>
-								</div>
-								<ul class="version-list">
-									<li>windows server 2022</li>
-									<li>windows server 2019</li>
-									<li>windows server 2016</li>
-									<li>windows server 2012</li>
-									<li>windows 10</li>
-									<li>windows 11</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xl-3 col-md-6 col-sm-6">
-							<div class="tab-card">
-								<div class="tab-card__head">
-									<div class="tab-head__icon">
-										<img src="images/alma-linux.svg" alt="alma linux icon" width="100%" height="100%" dark>
-										<img src="images/light-os3.svg" alt="alma linux icon" width="100%" height="100%" light>
-									</div>
-									<h2>Alma Linux</h2>
-								</div>
-								<ul class="version-list">
-									<li>almalinux 8</li>
-									<li>almalinux 9</li>
-								</ul>
-							</div>
-						</div>
+					<div class="title-block">
+							<h2 class="title">Готовые образы виртуальных машин</h2>
+							<h3 class="title-txt">Создайте виртуальную машину из готового образа или загрузите собственный</h3>
 					</div>
-				</div>
+					<div class="machine-taps">
+							<button type="button" class="active">Ubuntu</button>
+							<button type="button">Debian</button>
+							<button type="button">Windows</button>
+							<button type="button">Alma Linux</button>
+							<button type="button">FreeBSD</button>
+							<button type="button">CentOS</button>
+							<button type="button">Astra Linux</button>
+							<button type="button">Oracle Linux</button>
+							<button type="button">Rocky Linux</button>
+							<button type="button">Vz Linux</button>
+					</div>
+					<div class="tab-contents">
+							<div class="row g-3">
+									<!-- Ubuntu Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="ubuntu">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/ubuntu.svg" alt="ubuntu icon" width="100%" height="100%" dark>
+																	<img src="images/light-os4.svg" alt="ubuntu icon" width="100%" height="100%" light>
+															</div>
+															<h2>Ubuntu</h2>
+													</div>
+													<ul class="version-list">
+															<li>ubuntu 16.04</li>
+															<li>ubuntu 18.04</li>
+															<li>ubuntu 20.04</li>
+															<li>ubuntu 22.04</li>
+															<li>ubuntu 24.04</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- Debian Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="debian">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/debain.svg" alt="debian icon" width="100%" height="100%" dark>
+																	<img src="images/light-os1.svg" alt="debian icon" width="100%" height="100%" light>
+															</div>
+															<h2>Debian</h2>
+													</div>
+													<ul class="version-list">
+															<li>debian 9</li>
+															<li>debian 10</li>
+															<li>debian 11</li>
+															<li>debian 12</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- Windows Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="windows">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/windows.svg" alt="windows icon" width="100%" height="100%" dark>
+																	<img src="images/light-os2.svg" alt="windows icon" width="100%" height="100%" light>
+															</div>
+															<h2>Windows</h2>
+													</div>
+													<ul class="version-list">
+															<li>windows server 2022</li>
+															<li>windows server 2019</li>
+															<li>windows server 2016</li>
+															<li>windows server 2012</li>
+															<li>windows 10</li>
+															<li>windows 11</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- Alma Linux Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="alma-linux">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/alma-linux.svg" alt="alma linux icon" width="100%" height="100%" dark>
+																	<img src="images/light-os3.svg" alt="alma linux icon" width="100%" height="100%" light>
+															</div>
+															<h2>Alma Linux</h2>
+													</div>
+													<ul class="version-list">
+															<li>almalinux 8</li>
+															<li>almalinux 9</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- FreeBSD Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="freebsd">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/freebsd.svg" alt="freebsd icon" width="100%" height="100%" dark>
+																	<img src="images/light-os5.svg" alt="freebsd icon" width="100%" height="100%" light>
+															</div>
+															<h2>FreeBSD</h2>
+													</div>
+													<ul class="version-list">
+															<li>freebsd 11</li>
+															<li>freebsd 12</li>
+															<li>freebsd 13</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- CentOS Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="centos">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/centos.svg" alt="centos icon" width="100%" height="100%" dark>
+																	<img src="images/light-os6.svg" alt="centos icon" width="100%" height="100%" light>
+															</div>
+															<h2>CentOS</h2>
+													</div>
+													<ul class="version-list">
+															<li>centos 7</li>
+															<li>centos 8</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- Astra Linux Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="astra-linux">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/astra-linux.svg" alt="astra linux icon" width="100%" height="100%" dark>
+																	<img src="images/light-os7.svg" alt="astra linux icon" width="100%" height="100%" light>
+															</div>
+															<h2>Astra Linux</h2>
+													</div>
+													<ul class="version-list">
+															<li>astra linux 1.7</li>
+															<li>astra linux 1.8</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- Oracle Linux Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="oracle-linux">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/oracle-linux.svg" alt="oracle linux icon" width="100%" height="100%" dark>
+																	<img src="images/light-os8.svg" alt="oracle linux icon" width="100%" height="100%" light>
+															</div>
+															<h2>Oracle Linux</h2>
+													</div>
+													<ul class="version-list">
+															<li>oracle linux 7</li>
+															<li>oracle linux 8</li>
+															<li>oracle linux 9</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- Rocky Linux Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="rocky-linux">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/rocky-linux.svg" alt="rocky linux icon" width="100%" height="100%" dark>
+																	<img src="images/light-os9.svg" alt="rocky linux icon" width="100%" height="100%" light>
+															</div>
+															<h2>Rocky Linux</h2>
+													</div>
+													<ul class="version-list">
+															<li>rocky linux 8</li>
+															<li>rocky linux 9</li>
+													</ul>
+											</div>
+									</div>
+	
+									<!-- Vz Linux Card -->
+									<div class="col-xl-3 col-md-6 col-sm-6 os-card" data-os="vz-linux">
+											<div class="tab-card">
+													<div class="tab-card__head">
+															<div class="tab-head__icon">
+																	<img src="images/vz-linux.svg" alt="vz linux icon" width="100%" height="100%" dark>
+																	<img src="images/light-os10.svg" alt="vz linux icon" width="100%" height="100%" light>
+															</div>
+															<h2>Vz Linux</h2>
+													</div>
+													<ul class="version-list">
+															<li>vz linux 8</li>
+															<li>vz linux 9</li>
+													</ul>
+											</div>
+									</div>
+							</div>
+					</div>
 			</div>
-		</section>
+	</section>
+	
 		<!-- Machine end -->
 
 		<!-- Tariffs start -->
