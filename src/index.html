@@ -41,7 +41,8 @@
 								<input type="button" value="ru" class="btn lang-btn">
 								<ul class="dropdown-menu">
 									<li lang="ru"><a href="index.html"><img src="images/ru.svg" alt="ru" width="20"> Russia</a></li>
-									<li lang="en"><a href="index-en.html"><img src="images/en.svg" alt="en flag" width="20"> English</a></li>
+									<li lang="en"><a href="index-en.html"><img src="images/en.svg" alt="en flag" width="20"> English</a>
+									</li>
 								</ul>
 							</div>
 							<a href="#" class="btn login-btn">Войти</a>
@@ -70,7 +71,7 @@
 					<h1>Современный облачный
 						хостинг провайдер</h1>
 					<p>Производительность и надежность гарантируют бесперебойную работу проектов с высокой доступностью. Мы
-						предлагаем выделенные
+						предлагаем выделенные <br>
 						ресурсы и установку любой ОС или ISO-образа.</p>
 					<a href="#" class="btn home-btn">перейти к тарифам</a>
 				</div>
@@ -94,15 +95,9 @@
 						<img src="images/light-home-card-icons3.svg" alt="union 1" width="224.652" height="85" light>
 					</div>
 					<div class="home-card">
-						<div class="card-img lg-home-card">
-							<img src="images/Union-1.svg" alt="union" dark>
-							<img src="images/Union-2.svg" alt="union" dark>
-							<img src="images/Union.svg" alt="union" dark>
-						</div>
-						<div class="card-img lg-home-card">
-							<img src="images/light-home-card-icons4.svg" alt="union" light>
-							<img src="images/light-home-card-icons5.svg" alt="union" light>
-							<img src="images/light-home-card-icons6.svg" alt="union" light>
+						<div class="card-img">
+							<img src="images/lg-union-1.svg" alt="union" dark>
+							<img src="images/union-1.svg" alt="union" light>
 						</div>
 						<div class="home-card__about">
 							<h2>Надежность и <em>доступность</em></h2>
@@ -3325,7 +3320,7 @@
 				<div class="footer-wrap">
 					<div class="footer-head">
 						<div class="footer-logo">
-							<img src="images/logo.svg" alt="logo">
+							<img src="images/logo.svg" alt="logo" width="58.64">
 							<img src="images/logo-txt.svg" alt="QWINS" dark>
 							<img src="images/lg-logo-txt.svg" alt="QWINS" light>
 						</div>
@@ -3385,7 +3380,6 @@
 	<script src="js/main.min.js"></script>
 	<script>
 		const swiper = new Swiper('.tariffs-slider', {
-			mousewheel: true,
 			grabCursor: true,
 			breakpoints: {
 				0: {
@@ -3399,13 +3393,14 @@
 					slidesPerView: 1.5,
 				},
 				651: {
-					slidesPerView: 2,
+					slidesPerView: 2.2,
+					spaceBetween: 10
 				},
 				768: {
 					slidesPerView: 2.2,
 				},
 				992: {
-					slidesPerView: 2.9,
+					slidesPerView: 2.6,
 				},
 				1200: {
 					slidesPerView: 3.3,
@@ -3414,24 +3409,6 @@
 					slidesPerView: 4,
 				}
 			}
-		});
-
-
-		const tariffMelect__menu = document.querySelectorAll('.tariff-select__menu');
-
-
-		tariffMelect__menu.forEach(item => {
-			item.addEventListener('mouseenter', () => {
-				swiper.forEach(item => {
-					item.mousewheel.disable()
-				})
-			});
-
-			item.addEventListener('mouseleave', () => {
-				swiper.forEach(item => {
-					item.mousewheel.enable()
-				})
-			});
 		});
 	</script>
 </body>

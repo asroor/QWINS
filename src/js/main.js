@@ -27,9 +27,6 @@ function privacySeries(clickedItem, num) {
                 content.style.height = fullHeight; // Balandlikni to'liq balandlikka qo'yish
             }
         }
-        item.addEventListener('click', () => {
-            console.log('salom');
-        });
     });
 }
 document.addEventListener('DOMContentLoaded', () => {
@@ -64,20 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
         additionalThemeLink.href = 'css/light-theme.css'; // Yangi CSS faylni yuklash
         additionalThemeLink.id = 'light-theme-link'; // ID berib qo'yamiz
         document.head.appendChild(additionalThemeLink); // <head> ga qo'shamiz
+        localStorage.setItem('theme', 'light'); // Tanlangan temani localStorage ga saqlash
     }
-    // Qo'shimcha mavzuni o'chirish funksiyasi (light.min.css ni o'chirish)
+    // Qo'shimcha mavzuni o'chirish funksiyasi (dark min.css ni o'chirish)
     function removeLightTheme() {
         if (additionalThemeLink) {
             document.head.removeChild(additionalThemeLink); // <link> ni o'chirish
             additionalThemeLink = null; // Elementni null ga o'zgartirish
             body.classList.remove('light');
         }
+        localStorage.setItem('theme', 'dark'); // Tanlangan temani localStorage ga saqlash
     }
     // Dark atributiga ega elementlarni topish
     const darkElements = document.querySelectorAll('[dark]');
     // Light atributiga ega elementlarni topish
     const lightElements = document.querySelectorAll('[light]');
-    const lgHomeCard = document.querySelector('.lg-home-card');
     lightElements.forEach((el) => {
         el.style.display = 'none';
     });
@@ -99,12 +97,24 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.display = 'block'; // Dark elementlarni ko'rsatish
         });
     }
+    // Tanlangan temani localStorage dan olish va qo'llash
+    function applySavedTheme() {
+        const savedTheme = localStorage.getItem('theme'); // LocalStorage dan tanlangan temani olish
+        if (savedTheme === 'light') {
+            addLightTheme();
+            showLightTheme();
+        }
+        else {
+            showDarkTheme(); // Default tema - dark
+        }
+    }
+    // Sahifa yuklanganda tanlangan temani qo'llash
+    applySavedTheme();
     // Tugma bosilganda CSS faylni qo'shish yoki olib tashlash
     toggleButton.addEventListener('click', () => {
         if (!additionalThemeLink) {
             addLightTheme(); // Qo'shimcha CSS faylni qo'shish
             showLightTheme();
-            lgHomeCard.style.display = 'flex';
         }
         else {
             showDarkTheme();
