@@ -86,3 +86,19 @@ body {
 .nav-links li a {
 	color: rgba(52, 59, 69, 1);
 }
+
+.toltip .info-toltip {
+	background-color: #f5f5f5;
+	border: 0.5px solid #727883;
+}
+
+.footer-head {
+	border-bottom: 1px solid #d9d9d9;
+}
+.footer-bottom {
+	border-top: 1px solid #d9d9d9;
+}
+
+.home-wrap {
+	background-image: url(../images/lg-home-bg1.svg), url(../images/lg-home-bg2.svg);
+}

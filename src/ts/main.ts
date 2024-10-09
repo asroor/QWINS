@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Light atributiga ega elementlarni topish
 	const lightElements = document.querySelectorAll<HTMLElement>('[light]');
 	lightElements.forEach((el) => {
-		el.style.display = 'none'; 
+		el.style.display = 'none';
 	});
 	// Dark atributiga ega elementlarni yashirish, light atributiga ega elementlarni ko'rsatish
 	function showLightTheme(): void {
@@ -259,6 +259,7 @@ dropdownItems?.forEach(item => {
 		if (lang) {
 			langBtn.value = lang;
 			dropdownMenu.classList.remove('show');
+			closeBtn.style.display = 'none';
 		}
 	});
 });

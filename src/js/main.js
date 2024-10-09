@@ -228,6 +228,7 @@ dropdownItems === null || dropdownItems === void 0 ? void 0 : dropdownItems.forE
         if (lang) {
             langBtn.value = lang;
             dropdownMenu.classList.remove('show');
+            closeBtn.style.display = 'none';
         }
     });
 });

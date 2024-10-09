@@ -323,6 +323,30 @@ header.open {
 	text-transform: uppercase;
 }
 
+.navbar-btns {
+
+	.login-btn,
+	.lang-btn,
+	.dark-light-btn {
+		height: 36px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 15px;
+	}
+
+	.dark-light-btn {
+		width: 36px;
+		height: 36px;
+		padding: 6px;
+	}
+
+	.lang-btn {
+		width: 53px;
+		overflow: hidden;
+	}
+}
+
 .navbar-logo {
 	display: block;
 	overflow: hidden;
@@ -396,6 +420,9 @@ header.open {
 		max-width: 288px;
 		text-align: center;
 		margin: 0 auto;
+		height: 45px;
+		display: flex;
+		align-items: center;
 	}
 }
 
@@ -708,6 +735,9 @@ header.open {
 		padding: 10px;
 		background-color: #333;
 		border-radius: 6px;
+		height: 31px;
+		display: flex;
+		align-items: center;
 	}
 }
 
@@ -805,6 +835,10 @@ header.open {
 	.tariff-card__btn {
 		width: 100%;
 		margin-top: 24px;
+		height: 41px;
+		display: flex;
+		align-items: center;
+		font-size: 18px;
 	}
 }
 
@@ -859,9 +893,10 @@ header.open {
 	position: relative;
 
 	.select {
+		height: 45px;
 		border-radius: 8px;
 		border: 1px solid #4D4D4D;
-		padding: 16px;
+		padding: 0 16px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
