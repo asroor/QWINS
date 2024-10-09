@@ -58,7 +58,71 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
+const body = document.querySelector('body') as HTMLElement;
+document.addEventListener('DOMContentLoaded', () => {
+	const toggleButton = document.getElementById('theme-toggle') as HTMLButtonElement;
 
+	// Qo'shimcha mavzu uchun CSS linki
+	let additionalThemeLink: HTMLLinkElement | null = null;
+
+	// Qo'shimcha mavzuni qo'shish funksiyasi (light.min.css)
+	function addLightTheme(): void {
+		body.classList.add('light')
+		additionalThemeLink = document.createElement('link'); // Yangi <link> yaratish
+		additionalThemeLink.rel = 'stylesheet';
+		additionalThemeLink.href = 'css/light-theme.css'; // Yangi CSS faylni yuklash
+		additionalThemeLink.id = 'light-theme-link'; // ID berib qo'yamiz
+		document.head.appendChild(additionalThemeLink); // <head> ga qo'shamiz
+	}
+
+	// Qo'shimcha mavzuni o'chirish funksiyasi (light.min.css ni o'chirish)
+	function removeLightTheme(): void {
+		if (additionalThemeLink) {
+			document.head.removeChild(additionalThemeLink); // <link> ni o'chirish
+			additionalThemeLink = null; // Elementni null ga o'zgartirish
+			body.classList.remove('light')
+		}
+	}
+	// Dark atributiga ega elementlarni topish
+	const darkElements = document.querySelectorAll<HTMLElement>('[dark]');
+
+	// Light atributiga ega elementlarni topish
+	const lightElements = document.querySelectorAll<HTMLElement>('[light]');
+	lightElements.forEach((el) => {
+		el.style.display = 'none'; 
+	});
+	// Dark atributiga ega elementlarni yashirish, light atributiga ega elementlarni ko'rsatish
+	function showLightTheme(): void {
+		darkElements.forEach((el) => {
+			el.style.display = 'none'; // Dark elementlarni yashirish
+		});
+		lightElements.forEach((el) => {
+			el.style.display = 'block'; // Light elementlarni ko'rsatish
+		});
+	}
+
+	// Light atributiga ega elementlarni yashirish, dark atributiga ega elementlarni ko'rsatish
+	function showDarkTheme(): void {
+		lightElements.forEach((el) => {
+			el.style.display = 'none'; // Light elementlarni yashirish
+		});
+		darkElements.forEach((el) => {
+			el.style.display = 'block'; // Dark elementlarni ko'rsatish
+		});
+	}
+
+
+	// Tugma bosilganda CSS faylni qo'shish yoki olib tashlash
+	toggleButton.addEventListener('click', () => {
+		if (!additionalThemeLink) {
+			addLightTheme(); // Qo'shimcha CSS faylni qo'shish
+			showLightTheme()
+		} else {
+			showDarkTheme()
+			removeLightTheme(); // Qo'shimcha CSS faylni olib tashlash
+		}
+	});
+});
 
 
 // Funktsiya: Akkordeonni o'chirish va ochish

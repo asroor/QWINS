@@ -1,0 +1,88 @@
+:root {
+	--ff-gilroy: "Gilroy", "sans-serif";
+	--bg-def-dark: #f5f5f5;
+	--bg-def-dark2: #fff;
+	--bg-343434: #343434;
+	--bg-F8F8F8: #222525;
+}
+body {
+	color: #222525;
+}
+.lang-btn {
+	background-color: #f5f5f5;
+}
+.dark-light-btn {
+	background-color: #f5f5f5;
+
+	svg {
+		path {
+			fill: rgba(35, 35, 35, 1);
+		}
+	}
+}
+.lang-dropdown .dropdown-menu {
+	background-color: var(--bg-def-dark2);
+}
+.lang-dropdown .dropdown-menu li:hover {
+	background-color: var(--bg-def-dark);
+}
+.home-wrap h1 {
+	color: rgba(34, 37, 37, 1);
+}
+.home-wrap p,
+.title-block .title-txt {
+	color: #727883;
+}
+.home-card .home-card__about p {
+	color: #464d56;
+}
+.faq-card p {
+	color: #464d56;
+}
+.faq-card a {
+	color: rgba(35, 193, 255, 1);
+}
+.tab-card__head .tab-head__icon,
+.version-list li,
+.machine-taps button.active,
+.tariff-tabs .tabs-seria button.active,
+.tariff-card .tariff-card__head {
+	background-color: rgba(245, 245, 245, 1);
+}
+
+.tariff-card .tariff-card__head .tag {
+	color: rgba(255, 255, 255, 1);
+}
+
+.tariff-card .tariff-card__head h3 {
+	color: #222525;
+}
+.tariff-card__about .about__item .bottom-line {
+	background-color: rgba(217, 217, 217, 1);
+}
+
+.tariff-card__about .about__item h3 {
+	color: rgba(114, 120, 131, 1);
+}
+.tariff-select__menu ul li:hover {
+	background-color: #f5f5f5;
+}
+
+.accordion .accordion-content p {
+	color: #222525;
+}
+
+.footer-series__item li {
+	color: rgba(146, 146, 146, 1);
+}
+.footer-series__item li a {
+	color: rgba(34, 37, 37, 1);
+}
+
+.footer-bottom .footer-bottom__item p {
+	color: rgba(146, 146, 146, 1);
+}
+
+.nav-links li a {
+	color: rgba(52, 59, 69, 1);
+}

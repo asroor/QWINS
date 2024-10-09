@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>QWINS</title>
 	<link rel="stylesheet" href="libs/swiper.min.css">
-	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/main.min.css" id="theme-link">
 </head>
 
 <body>
@@ -21,7 +21,8 @@
 							<li><a href="#">Главная</a></li>
 							<li class="header-dropdown"><a href="#">
 									Услуги
-									<img src="images/arrow-down.svg" alt="arrow down icon" width="19" height="19">
+									<img src="images/arrow-down.svg" alt="arrow down icon" width="19" height="19" dark>
+									<img src="images/lg-arrow-down.svg" alt="arrow down icon" width="19" height="19" light>
 								</a></li>
 							<li><a href="#">Рефералы</a></li>
 						</ul>
@@ -29,6 +30,13 @@
 							<img src="images/logo.svg" alt="logo" width="70.91" height="70.91">
 						</a>
 						<div class="navbar-btns">
+							<button class="btn dark-light-btn" type="button" id="theme-toggle">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path
+										d="M12 21.9967C6.47715 21.9967 2 17.5196 2 11.9967C2 6.47386 6.47715 1.9967 12 1.9967C17.5228 1.9967 22 6.47386 22 11.9967C22 17.5196 17.5228 21.9967 12 21.9967ZM12 19.9967C16.4183 19.9967 20 16.415 20 11.9967C20 7.57843 16.4183 3.9967 12 3.9967C7.58172 3.9967 4 7.57843 4 11.9967C4 16.415 7.58172 19.9967 12 19.9967ZM7.00035 15.316C9.07995 15.1646 11.117 14.2939 12.7071 12.7038C14.2972 11.1137 15.1679 9.07666 15.3193 6.99706C15.6454 7.21408 15.955 7.46642 16.2426 7.75406C18.5858 10.0972 18.5858 13.8962 16.2426 16.2393C13.8995 18.5825 10.1005 18.5825 7.75736 16.2393C7.46971 15.9517 7.21738 15.6421 7.00035 15.316Z"
+										fill="#fff" />
+								</svg>
+							</button>
 							<div class="lang-dropdown">
 								<input type="button" value="ru" class="btn lang-btn">
 								<ul class="dropdown-menu">
@@ -43,8 +51,10 @@
 						<div class="header-bottom__item">
 							<h3>Услуги</h3>
 							<ul class="header-bottom__links">
-								<li><a href="#"><img src="images/hr-icon1.svg" alt="link icon"> Выделенный сервер</a></li>
-								<li><a href="#"><img src="images/hr-icon1.svg" alt="link icon"> Выделенный сервер</a></li>
+								<li><a href="#"><img src="images/hr-icon1.svg" alt="link icon" dark> <img src="images/lg-hr.svg"
+											alt="link icon" light> Выделенный сервер</a></li>
+								<li><a href="#"><img src="images/hr-icon1.svg" alt="link icon" dark> <img src="images/lg-hr.svg"
+											alt="link icon" light> Выделенный сервер</a></li>
 							</ul>
 						</div>
 					</div>
@@ -71,7 +81,8 @@
 							<p>Выбирая наш хостинг, вы можете быть уверены
 								в надежности и эффективности работы.</p>
 						</div>
-						<img src="images/home-card1.svg" alt="union 1" width="113.136" height="99.45">
+						<img src="images/home-card1.svg" alt="union 1" width="113.136" height="99.45" dark>
+						<img src="images/light-home-card-icons2.svg" alt="union 1" width="113.136" height="99.45" light>
 					</div>
 					<div class="home-card">
 						<div class="home-card__about">
@@ -79,13 +90,17 @@
 							<p>Арендуя сервер, вы можете быть уверены
 								в полном доступе к его ресурсам на 100%.</p>
 						</div>
-						<img src="images/home-card2.svg" alt="union 1" width="224.652" height="85">
+						<img src="images/home-card2.svg" alt="union 1" width="224.652" height="85" dark>
+						<img src="images/light-home-card-icons3.svg" alt="union 1" width="224.652" height="85" light>
 					</div>
 					<div class="home-card">
 						<div class="card-img">
-							<img src="images/Union-1.svg" alt="union">
-							<img src="images/Union-2.svg" alt="union">
-							<img src="images/Union.svg" alt="union">
+							<img src="images/light-home-card-icons4.svg" alt="union" light>
+							<img src="images/Union-1.svg" alt="union" dark>
+							<img src="images/Union-2.svg" alt="union" dark>
+							<img src="images/light-home-card-icons5.svg" alt="union" light>
+							<img src="images/light-home-card-icons6.svg" alt="union" light>
+							<img src="images/Union.svg" alt="union" dark>
 						</div>
 						<div class="home-card__about">
 							<h2>Надежность и <em>доступность</em></h2>
@@ -99,7 +114,8 @@
 							<p>Наша команда всегда готова помочь вам решить любые вопросы и спорные ситуации в любое время суток.</p>
 						</div>
 						<div class="card-img">
-							<img src="images/home-card4.svg" alt="union 1" width="236.965" height="137.316">
+							<img src="images/home-card4.svg" alt="union 1" width="236.965" height="137.316" dark>
+							<img src="images/light-home-card-icons1.svg" alt="union 1" width="236.965" height="137.316" light>
 						</div>
 					</div>
 				</div>
@@ -133,7 +149,9 @@
 								<div class="tab-card__head">
 									<div class="tab-head__icon">
 										<img src="images/ubuntu.svg" alt="ubuntu icon" width="100%" height="100%"
-											style="margin-left: -1.2px;">
+											style="margin-left: -1.2px;" dark>
+										<img src="images/light-os4.svg" alt="ubuntu icon" width="100%" height="100%"
+											style="margin-left: -1.2px;" light>
 									</div>
 									<h2>Ubuntu</h2>
 								</div>
@@ -150,7 +168,8 @@
 							<div class="tab-card">
 								<div class="tab-card__head">
 									<div class="tab-head__icon">
-										<img src="images/debain.svg" alt="debain icon" width="100%" height="100%">
+										<img src="images/debain.svg" alt="debain icon" width="100%" height="100%" dark>
+										<img src="images/light-os1.svg" alt="debain icon" width="100%" height="100%" light>
 									</div>
 									<h2>Debain</h2>
 								</div>
@@ -166,7 +185,8 @@
 							<div class="tab-card">
 								<div class="tab-card__head">
 									<div class="tab-head__icon" style=" padding: 2px 1px 2px 3px;">
-										<img src="images/windows.svg" alt="windows icon" width="100%" height="100%">
+										<img src="images/windows.svg" alt="windows icon" width="100%" height="100%" dark>
+										<img src="images/light-os2.svg" alt="windows icon" width="100%" height="100%" light>
 									</div>
 									<h2>Windows</h2>
 								</div>
@@ -184,7 +204,8 @@
 							<div class="tab-card">
 								<div class="tab-card__head">
 									<div class="tab-head__icon">
-										<img src="images/alma-linux.svg" alt="alma linux icon" width="100%" height="100%">
+										<img src="images/alma-linux.svg" alt="alma linux icon" width="100%" height="100%" dark>
+										<img src="images/light-os3.svg" alt="alma linux icon" width="100%" height="100%" light>
 									</div>
 									<h2>Alma Linux</h2>
 								</div>
@@ -300,7 +321,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -400,7 +423,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -500,7 +525,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -600,7 +627,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -700,7 +729,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -800,7 +831,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -900,7 +933,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1006,7 +1041,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1106,7 +1143,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1206,7 +1245,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1306,7 +1347,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1406,7 +1449,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1506,7 +1551,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1606,7 +1653,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1714,7 +1763,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1814,7 +1865,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -1914,7 +1967,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2014,7 +2069,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2114,7 +2171,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2214,7 +2273,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2314,7 +2375,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2420,7 +2483,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2520,7 +2585,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2620,7 +2687,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2720,7 +2789,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2820,7 +2891,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -2920,7 +2993,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -3020,7 +3095,9 @@
 											<div class="select">
 												<h2>Windows server 2019</h2>
 												<img src="images/select-down.svg" alt="select down icon" width="24" height="24"
-													class="select-down-icon">
+													class="select-down-icon" dark>
+												<img src="images/lg-select-down.svg" alt="select down icon" width="24" height="24"
+													class="select-down-icon" light>
 											</div>
 											<div class="tariff-select__menu">
 												<ul>
@@ -3058,7 +3135,8 @@
 								<div class="accordion">
 									<div class="accordion-head" onclick="toggleAccordion(this)">
 										<h3>Тестовый период</h3>
-										<img src="images/plus.svg" alt="plus icon" width="24" height="24">
+										<img src="images/plus.svg" alt="plus icon" width="24" height="24" dark>
+										<img src="images/lg-plus.svg" alt="plus icon" width="24" height="24" light>
 									</div>
 									<div class="accordion-content">
 										<p>Вы можете заказать сервер, а если он не будет соответствовать вашим требованиям,
@@ -3068,7 +3146,8 @@
 								<div class="accordion">
 									<div class="accordion-head" onclick="toggleAccordion(this)">
 										<h3>В чём отличие между виртуальным и выделенным сервером?</h3>
-										<img src="images/plus.svg" alt="plus icon" width="24" height="24">
+										<img src="images/plus.svg" alt="plus icon" width="24" height="24" dark>
+										<img src="images/lg-plus.svg" alt="plus icon" width="24" height="24" light>
 									</div>
 									<div class="accordion-content">
 										<p>Вы можете заказать сервер, а если он не будет соответствовать вашим требованиям,
@@ -3078,7 +3157,8 @@
 								<div class="accordion">
 									<div class="accordion-head" onclick="toggleAccordion(this)">
 										<h3>DDoS защита</h3>
-										<img src="images/plus.svg" alt="plus icon" width="24" height="24">
+										<img src="images/plus.svg" alt="plus icon" width="24" height="24" dark>
+										<img src="images/lg-plus.svg" alt="plus icon" width="24" height="24" light>
 									</div>
 									<div class="accordion-content">
 										<p>Вы можете заказать сервер, а если он не будет соответствовать вашим требованиям,
@@ -3088,7 +3168,8 @@
 								<div class="accordion">
 									<div class="accordion-head" onclick="toggleAccordion(this)">
 										<h3>Виртуализация</h3>
-										<img src="images/plus.svg" alt="plus icon" width="24" height="24">
+										<img src="images/plus.svg" alt="plus icon" width="24" height="24" dark>
+										<img src="images/lg-plus.svg" alt="plus icon" width="24" height="24" light>
 									</div>
 									<div class="accordion-content">
 										<p>Вы можете заказать сервер, а если он не будет соответствовать вашим требованиям,
@@ -3133,7 +3214,8 @@
 					<div class="footer-head">
 						<div class="footer-logo">
 							<img src="images/logo.svg" alt="logo">
-							<img src="images/logo-txt.svg" alt="QWINS">
+							<img src="images/logo-txt.svg" alt="QWINS" dark>
+							<img src="images/lg-logo-txt.svg" alt="QWINS" light>
 						</div>
 					</div>
 					<div class="footer-series">

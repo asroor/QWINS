@@ -127,6 +127,17 @@ button {
 	cursor: pointer;
 }
 
+.dark-light-btn {
+	width: 44px;
+	height: 44px;
+	padding: 10px;
+	background-color: var(--bg-343434);
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+}
 
 .title-block {
 	text-align: center;
@@ -1183,9 +1194,11 @@ header.open {
 		line-height: 22px;
 	}
 }
+
 .right-sieries__content.active {
 	height: auto;
 }
+
 /*======================
 	Footer
 =====================*/
@@ -1396,6 +1409,7 @@ footer {
 	.privacy-left {
 		display: none;
 	}
+
 	.referral-home {
 		background-position: -240px -50%, -20px 130%, calc(100% + 28px) 150px;
 		background-size: 1832px, 240px, 240px;
@@ -1677,6 +1691,7 @@ footer {
 		padding: 20px;
 		padding-top: 30px;
 	}
+
 	.home-wrap {
 		background: var(--bg-def-dark2);
 	}
@@ -1726,9 +1741,11 @@ footer {
 	.footer-series .footer-series__item {
 		max-width: 100%;
 	}
+
 	.privacy-right .privacy__title {
 		font-size: 22px;
 	}
+
 	.btn {
 		padding: 15px 20px;
 	}
@@ -1765,6 +1782,7 @@ footer {
 			}
 		}
 	}
+
 	.card-price h2 {
 		font-size: 18px;
 	}
@@ -1782,7 +1800,8 @@ footer {
 	.tariffs-slider {
 		padding: 0 10px;
 	}
+
 	.referral-series-item {
-			font-size: 16px;
+		font-size: 16px;
 	}
 }
