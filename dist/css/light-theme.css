@@ -101,8 +101,77 @@ body {
 
 .home-wrap {
 	background-image: url(../images/lg-home-bg1.svg), url(../images/lg-home-bg2.svg);
+	background-repeat: no-repeat, no-repeat;
+	background-position:
+		top left,
+		top right;
+	background-size: contain, contain;
 }
 
 .home-card .home-card__about h2 span {
 	background: rgba(230, 230, 230, 1);
+}
+
+#privacy .privacy-wrapper {
+	background-color: white;
+}
+.right-sieries__content p {
+	background-color: #f5f5f5;
+	color: #4f4f4f;
+}
+.left-sieries li.active {
+	background-color: #f5f5f5;
+}
+
+.referral-home {
+	background-image: url(../images/lg-rfrl-liner.svg), url(../images/lg-rfl-home1.svg), url(../images/lg-rfl-home2.svg);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position:
+		-240px 100%,
+		-20px 100%,
+		calc(100% + 28px) 40px;
+	background-size: 1832px, 400px, 400px;
+}
+
+.card-price {
+	background-color: rgba(245, 245, 245, 1);
+}
+.card-price .card-price__about p {
+	color: rgba(96, 96, 96, 1);
+}
+
+.referral-home-card p {
+	color: rgba(70, 77, 86, 1);
+}
+
+@media (max-width: 1199px) {
+	.referral-home {
+		background-position:
+			-240px 100%,
+			-20px 150%,
+			calc(100% + 28px) 130px;
+		background-size: 1832px, 270px, 260px;
+	}
+}
+
+@media (max-width: 991px) {
+	.referral-home {
+		background-position:
+			-240px -50%,
+			-20px 130%,
+			calc(100% + 28px) 150px;
+		background-size: 1832px, 240px, 240px;
+	}
+}
+@media (max-width: 550px) {
+	.referral-home {
+		background: var(--bg-def-dark2);
+	}
+}
+
+
+@media (max-width: 767px) {
+	.home-wrap:not(.referral-home) {
+		background: #fff;
+	}
 }

@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkElements = document.querySelectorAll('[dark]');
     // Light atributiga ega elementlarni topish
     const lightElements = document.querySelectorAll('[light]');
+    const lgHomeCard = document.querySelector('.lg-home-card');
     lightElements.forEach((el) => {
         el.style.display = 'none';
     });
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!additionalThemeLink) {
             addLightTheme(); // Qo'shimcha CSS faylni qo'shish
             showLightTheme();
+            lgHomeCard.style.display = 'flex';
         }
         else {
             showDarkTheme();
@@ -289,41 +291,45 @@ try {
 }
 catch (error) {
 }
-document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".machine-taps button");
-    const cardsContainer = document.querySelector(".tab-contents .row");
-    const cards = Array.from(document.querySelectorAll(".os-card"));
-    // Max ko'rsatiladigan kartalar soni
-    const maxCardsToShow = 4;
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            var _a;
-            // Barcha tugmalardan 'active' klassini olib tashlash
-            buttons.forEach(btn => btn.classList.remove("active"));
-            // Tanlangan tugmaga 'active' klassini qo'shish
-            button.classList.add("active");
-            // Tanlangan OS kartalarini birinchi o'ringa chiqarish uchun OS nomini olish
-            const selectedOS = ((_a = button.textContent) === null || _a === void 0 ? void 0 : _a.toLowerCase().replace(" ", "-")) || "";
-            // Tanlangan OS kartalarini filtr qilish
-            const selectedCards = cards.filter(card => card.getAttribute("data-os") === selectedOS);
-            const otherCards = cards.filter(card => card.getAttribute("data-os") !== selectedOS);
-            // Yangi tartibni yaratish: avval tanlangan kartalar, keyin boshqalar
-            const sortedCards = [...selectedCards, ...otherCards];
-            // Kartalar konteynerini tozalash va yangi tartibda qo'shish
-            cardsContainer.innerHTML = "";
-            sortedCards.forEach((card, index) => {
-                if (index < maxCardsToShow) {
-                    // Faqat 4 ta kartani ko'rsatish
-                    card.style.display = "block";
-                }
-                else {
-                    // Qolgan kartalarni yashirish
-                    card.style.display = "none";
-                }
-                cardsContainer.appendChild(card);
+try {
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".machine-taps button");
+        const cardsContainer = document.querySelector(".tab-contents .row");
+        const cards = Array.from(document.querySelectorAll(".os-card"));
+        // Max ko'rsatiladigan kartalar soni
+        const maxCardsToShow = 4;
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                var _a;
+                // Barcha tugmalardan 'active' klassini olib tashlash
+                buttons.forEach(btn => btn.classList.remove("active"));
+                // Tanlangan tugmaga 'active' klassini qo'shish
+                button.classList.add("active");
+                // Tanlangan OS kartalarini birinchi o'ringa chiqarish uchun OS nomini olish
+                const selectedOS = ((_a = button.textContent) === null || _a === void 0 ? void 0 : _a.toLowerCase().replace(" ", "-")) || "";
+                // Tanlangan OS kartalarini filtr qilish
+                const selectedCards = cards.filter(card => card.getAttribute("data-os") === selectedOS);
+                const otherCards = cards.filter(card => card.getAttribute("data-os") !== selectedOS);
+                // Yangi tartibni yaratish: avval tanlangan kartalar, keyin boshqalar
+                const sortedCards = [...selectedCards, ...otherCards];
+                // Kartalar konteynerini tozalash va yangi tartibda qo'shish
+                cardsContainer.innerHTML = "";
+                sortedCards.forEach((card, index) => {
+                    if (index < maxCardsToShow) {
+                        // Faqat 4 ta kartani ko'rsatish
+                        card.style.display = "block";
+                    }
+                    else {
+                        // Qolgan kartalarni yashirish
+                        card.style.display = "none";
+                    }
+                    cardsContainer.appendChild(card);
+                });
             });
         });
+        // Bosilganda birinchi bo'lib Ubuntu kartalarini ko'rsatish
+        buttons[0].click();
     });
-    // Bosilganda birinchi bo'lib Ubuntu kartalarini ko'rsatish
-    buttons[0].click();
-});
+}
+catch (error) {
+}

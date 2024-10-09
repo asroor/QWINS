@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	// Dark atributiga ega elementlarni topish
 	const darkElements = document.querySelectorAll<HTMLElement>('[dark]');
-
 	// Light atributiga ega elementlarni topish
 	const lightElements = document.querySelectorAll<HTMLElement>('[light]');
+	const lgHomeCard = document.querySelector<HTMLElement>('.lg-home-card')
 	lightElements.forEach((el) => {
 		el.style.display = 'none';
 	});
@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!additionalThemeLink) {
 			addLightTheme(); // Qo'shimcha CSS faylni qo'shish
 			showLightTheme()
+			lgHomeCard!.style.display = 'flex'
 		} else {
 			showDarkTheme()
 			removeLightTheme(); // Qo'shimcha CSS faylni olib tashlash
@@ -344,47 +345,51 @@ try {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-	const buttons = document.querySelectorAll(".machine-taps button");
-	const cardsContainer = document.querySelector(".tab-contents .row") as HTMLElement;
-	const cards = Array.from(document.querySelectorAll(".os-card"));
+try {
+	document.addEventListener("DOMContentLoaded", () => {
+		const buttons = document.querySelectorAll(".machine-taps button") as NodeListOf<HTMLButtonElement>;
+		const cardsContainer = document.querySelector(".tab-contents .row") as HTMLElement;
+		const cards = Array.from(document.querySelectorAll(".os-card") as NodeListOf<HTMLElement>);
 
-	// Max ko'rsatiladigan kartalar soni
-	const maxCardsToShow = 4;
+		// Max ko'rsatiladigan kartalar soni
+		const maxCardsToShow = 4;
 
-	buttons.forEach(button => {
+		buttons.forEach(button => {
 			button.addEventListener("click", () => {
-					// Barcha tugmalardan 'active' klassini olib tashlash
-					buttons.forEach(btn => btn.classList.remove("active"));
-					// Tanlangan tugmaga 'active' klassini qo'shish
-					button.classList.add("active");
+				// Barcha tugmalardan 'active' klassini olib tashlash
+				buttons.forEach(btn => btn.classList.remove("active"));
+				// Tanlangan tugmaga 'active' klassini qo'shish
+				button.classList.add("active");
 
-					// Tanlangan OS kartalarini birinchi o'ringa chiqarish uchun OS nomini olish
-					const selectedOS = button.textContent?.toLowerCase().replace(" ", "-") || "";
+				// Tanlangan OS kartalarini birinchi o'ringa chiqarish uchun OS nomini olish
+				const selectedOS = button.textContent?.toLowerCase().replace(" ", "-") || "";
 
-					// Tanlangan OS kartalarini filtr qilish
-					const selectedCards = cards.filter(card => card.getAttribute("data-os") === selectedOS);
-					const otherCards = cards.filter(card => card.getAttribute("data-os") !== selectedOS);
+				// Tanlangan OS kartalarini filtr qilish
+				const selectedCards = cards.filter(card => card.getAttribute("data-os") === selectedOS);
+				const otherCards = cards.filter(card => card.getAttribute("data-os") !== selectedOS);
 
-					// Yangi tartibni yaratish: avval tanlangan kartalar, keyin boshqalar
-					const sortedCards = [...selectedCards, ...otherCards];
+				// Yangi tartibni yaratish: avval tanlangan kartalar, keyin boshqalar
+				const sortedCards = [...selectedCards, ...otherCards];
 
-					// Kartalar konteynerini tozalash va yangi tartibda qo'shish
-					cardsContainer.innerHTML = "";
-					sortedCards.forEach((card, index) => {
-							if (index < maxCardsToShow) {
-									// Faqat 4 ta kartani ko'rsatish
-									card.style.display = "block";
-							} else {
-									// Qolgan kartalarni yashirish
-									card.style.display = "none";
-							}
-							cardsContainer.appendChild(card);
-					});
+				// Kartalar konteynerini tozalash va yangi tartibda qo'shish
+				cardsContainer.innerHTML = "";
+				sortedCards.forEach((card, index) => {
+					if (index < maxCardsToShow) {
+						// Faqat 4 ta kartani ko'rsatish
+						card.style.display = "block";
+					} else {
+						// Qolgan kartalarni yashirish
+						card.style.display = "none";
+					}
+					cardsContainer.appendChild(card);
+				});
 			});
+		});
+
+		// Bosilganda birinchi bo'lib Ubuntu kartalarini ko'rsatish
+		buttons[0].click();
 	});
 
-	// Bosilganda birinchi bo'lib Ubuntu kartalarini ko'rsatish
-	buttons[0].click();
-});
+} catch (error) {
 
+}
