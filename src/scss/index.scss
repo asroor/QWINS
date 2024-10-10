@@ -1660,13 +1660,6 @@ footer {
 	.home-card:nth-child(3) .card-img {
 		margin: 0 auto;
 		max-width: 300px;
-
-		img {
-
-			&:nth-child(2) {
-				max-width: 15%;
-			}
-		}
 	}
 
 	.home-card:nth-child(3) .home-card__about {
@@ -1902,6 +1895,12 @@ footer {
 }
 
 @media (max-width: 450px) {
+	.home-wrap:not(.referral-home) {
+		padding: 30px;
+	}
+	.home-wrap p {
+		line-height: 150%;
+	}
 	.referral-home-card {
 		.home-img {
 			img {
