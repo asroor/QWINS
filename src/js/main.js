@@ -48,80 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-const body = document.querySelector('body');
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('theme-toggle');
-    // Qo'shimcha mavzu uchun CSS linki
-    let additionalThemeLink = null;
-    // Qo'shimcha mavzuni qo'shish funksiyasi (light.min.css)
-    function addLightTheme() {
-        body.classList.add('light');
-        additionalThemeLink = document.createElement('link'); // Yangi <link> yaratish
-        additionalThemeLink.rel = 'stylesheet';
-        additionalThemeLink.href = 'css/light-theme.css'; // Yangi CSS faylni yuklash
-        additionalThemeLink.id = 'light-theme-link'; // ID berib qo'yamiz
-        document.head.appendChild(additionalThemeLink); // <head> ga qo'shamiz
-        localStorage.setItem('theme', 'light'); // Tanlangan temani localStorage ga saqlash
-    }
-    // Qo'shimcha mavzuni o'chirish funksiyasi (dark min.css ni o'chirish)
-    function removeLightTheme() {
-        if (additionalThemeLink) {
-            document.head.removeChild(additionalThemeLink); // <link> ni o'chirish
-            additionalThemeLink = null; // Elementni null ga o'zgartirish
-            body.classList.remove('light');
-        }
-        localStorage.setItem('theme', 'dark'); // Tanlangan temani localStorage ga saqlash
-    }
-    // Dark atributiga ega elementlarni topish
-    const darkElements = document.querySelectorAll('[dark]');
-    // Light atributiga ega elementlarni topish
-    const lightElements = document.querySelectorAll('[light]');
-    lightElements.forEach((el) => {
-        el.style.display = 'none';
-    });
-    // Dark atributiga ega elementlarni yashirish, light atributiga ega elementlarni ko'rsatish
-    function showLightTheme() {
-        darkElements.forEach((el) => {
-            el.style.display = 'none'; // Dark elementlarni yashirish
-        });
-        lightElements.forEach((el) => {
-            el.style.display = 'block'; // Light elementlarni ko'rsatish
-        });
-    }
-    // Light atributiga ega elementlarni yashirish, dark atributiga ega elementlarni ko'rsatish
-    function showDarkTheme() {
-        lightElements.forEach((el) => {
-            el.style.display = 'none'; // Light elementlarni yashirish
-        });
-        darkElements.forEach((el) => {
-            el.style.display = 'block'; // Dark elementlarni ko'rsatish
-        });
-    }
-    // Tanlangan temani localStorage dan olish va qo'llash
-    function applySavedTheme() {
-        const savedTheme = localStorage.getItem('theme'); // LocalStorage dan tanlangan temani olish
-        if (savedTheme === 'light') {
-            addLightTheme();
-            showLightTheme();
-        }
-        else {
-            showDarkTheme(); // Default tema - dark
-        }
-    }
-    // Sahifa yuklanganda tanlangan temani qo'llash
-    applySavedTheme();
-    // Tugma bosilganda CSS faylni qo'shish yoki olib tashlash
-    toggleButton.addEventListener('click', () => {
-        if (!additionalThemeLink) {
-            addLightTheme(); // Qo'shimcha CSS faylni qo'shish
-            showLightTheme();
-        }
-        else {
-            showDarkTheme();
-            removeLightTheme(); // Qo'shimcha CSS faylni olib tashlash
-        }
-    });
-});
 // Funktsiya: Akkordeonni o'chirish va ochish
 function toggleAccordion(clickedHead) {
     const allAccordions = document.querySelectorAll('.accordion'); // Barcha akkordeonlarni tanlash
@@ -231,8 +157,8 @@ const langBtn = document.querySelector('.lang-btn');
 const dropdownItems = document.querySelectorAll('.dropdown-menu li');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 langBtn.addEventListener('click', () => {
-    closeBtn.style.display = 'block';
-    dropdownMenu.classList.add('show');
+    closeBtn.style.display = closeBtn.style.display === 'block' ? 'none' : 'block';
+    dropdownMenu.classList.toggle('show');
 });
 dropdownItems === null || dropdownItems === void 0 ? void 0 : dropdownItems.forEach(item => {
     const lang = item.getAttribute('lang');
@@ -301,45 +227,77 @@ try {
 }
 catch (error) {
 }
-try {
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".machine-taps button");
-        const cardsContainer = document.querySelector(".tab-contents .row");
-        const cards = Array.from(document.querySelectorAll(".os-card"));
-        // Max ko'rsatiladigan kartalar soni
-        const maxCardsToShow = 4;
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                var _a;
-                // Barcha tugmalardan 'active' klassini olib tashlash
-                buttons.forEach(btn => btn.classList.remove("active"));
-                // Tanlangan tugmaga 'active' klassini qo'shish
-                button.classList.add("active");
-                // Tanlangan OS kartalarini birinchi o'ringa chiqarish uchun OS nomini olish
-                const selectedOS = ((_a = button.textContent) === null || _a === void 0 ? void 0 : _a.toLowerCase().replace(" ", "-")) || "";
-                // Tanlangan OS kartalarini filtr qilish
-                const selectedCards = cards.filter(card => card.getAttribute("data-os") === selectedOS);
-                const otherCards = cards.filter(card => card.getAttribute("data-os") !== selectedOS);
-                // Yangi tartibni yaratish: avval tanlangan kartalar, keyin boshqalar
-                const sortedCards = [...selectedCards, ...otherCards];
-                // Kartalar konteynerini tozalash va yangi tartibda qo'shish
-                cardsContainer.innerHTML = "";
-                sortedCards.forEach((card, index) => {
-                    if (index < maxCardsToShow) {
-                        // Faqat 4 ta kartani ko'rsatish
-                        card.style.display = "block";
-                    }
-                    else {
-                        // Qolgan kartalarni yashirish
-                        card.style.display = "none";
-                    }
-                    cardsContainer.appendChild(card);
-                });
-            });
-        });
-        // Bosilganda birinchi bo'lib Ubuntu kartalarini ko'rsatish
-        buttons[0].click();
+const body = document.querySelector('body');
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('theme-toggle');
+    // Qo'shimcha mavzu uchun CSS linki
+    let additionalThemeLink = null;
+    // Qo'shimcha mavzuni qo'shish funksiyasi (light.min.css)
+    function addLightTheme() {
+        body.classList.add('light');
+        additionalThemeLink = document.createElement('link'); // Yangi <link> yaratish
+        additionalThemeLink.rel = 'stylesheet';
+        additionalThemeLink.href = 'css/light-theme.css'; // Yangi CSS faylni yuklash
+        additionalThemeLink.id = 'light-theme-link'; // ID berib qo'yamiz
+        document.head.appendChild(additionalThemeLink); // <head> ga qo'shamiz
+        localStorage.setItem('theme', 'light'); // Tanlangan temani localStorage ga saqlash
+    }
+    // Qo'shimcha mavzuni o'chirish funksiyasi (dark min.css ni o'chirish)
+    function removeLightTheme() {
+        if (additionalThemeLink) {
+            document.head.removeChild(additionalThemeLink); // <link> ni o'chirish
+            additionalThemeLink = null; // Elementni null ga o'zgartirish
+            body.classList.remove('light');
+        }
+        localStorage.setItem('theme', 'dark'); // Tanlangan temani localStorage ga saqlash
+    }
+    // Dark atributiga ega elementlarni topish
+    const darkElements = document.querySelectorAll('[dark]');
+    // Light atributiga ega elementlarni topish
+    const lightElements = document.querySelectorAll('[light]');
+    lightElements.forEach((el) => {
+        el.style.display = 'none';
     });
-}
-catch (error) {
-}
+    // Dark atributiga ega elementlarni yashirish, light atributiga ega elementlarni ko'rsatish
+    function showLightTheme() {
+        darkElements.forEach((el) => {
+            el.style.display = 'none'; // Dark elementlarni yashirish
+        });
+        lightElements.forEach((el) => {
+            el.style.display = 'block'; // Light elementlarni ko'rsatish
+        });
+    }
+    // Light atributiga ega elementlarni yashirish, dark atributiga ega elementlarni ko'rsatish
+    function showDarkTheme() {
+        lightElements.forEach((el) => {
+            el.style.display = 'none'; // Light elementlarni yashirish
+        });
+        darkElements.forEach((el) => {
+            el.style.display = 'block'; // Dark elementlarni ko'rsatish
+        });
+    }
+    // Tanlangan temani localStorage dan olish va qo'llash
+    function applySavedTheme() {
+        const savedTheme = localStorage.getItem('theme'); // LocalStorage dan tanlangan temani olish
+        if (savedTheme === 'light') {
+            addLightTheme();
+            showLightTheme();
+        }
+        else {
+            showDarkTheme(); // Default tema - dark
+        }
+    }
+    // Sahifa yuklanganda tanlangan temani qo'llash
+    applySavedTheme();
+    // Tugma bosilganda CSS faylni qo'shish yoki olib tashlash
+    toggleButton.addEventListener('click', () => {
+        if (!additionalThemeLink) {
+            addLightTheme(); // Qo'shimcha CSS faylni qo'shish
+            showLightTheme();
+        }
+        else {
+            showDarkTheme();
+            removeLightTheme(); // Qo'shimcha CSS faylni olib tashlash
+        }
+    });
+});

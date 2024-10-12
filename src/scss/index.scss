@@ -720,6 +720,7 @@ header.open {
 		border: none;
 		background-color: transparent;
 		border-radius: 10px;
+		user-select: none;
 
 		&.active {
 			background-color: #333;
@@ -737,6 +738,7 @@ header.open {
 	padding: 20px;
 	border-radius: 20px;
 	background: var(--bg-def-dark2);
+	min-height: 290px;
 
 	.tab-card__head {
 		display: flex;
@@ -748,6 +750,7 @@ header.open {
 			font-size: 22px;
 			font-weight: 600;
 			line-height: 26px;
+			user-select: none;
 		}
 	}
 }
@@ -766,6 +769,10 @@ header.open {
 		height: 44px;
 		flex-shrink: 0;
 		padding: 2px;
+
+		img {
+			pointer-events: none;
+		}
 	}
 }
 
@@ -781,6 +788,7 @@ header.open {
 	max-width: 270px;
 
 	li {
+		user-select: none;
 		color: var(--bg-F8F8F8);
 		font-size: 16px;
 		font-weight: 500;
@@ -800,7 +808,7 @@ header.open {
 =====================*/
 
 #tariffs {
-	margin-top: 100px;
+	padding-top: 100px;
 	width: 100%;
 }
 
@@ -1850,9 +1858,11 @@ footer {
 		width: 100%;
 		height: fit-content;
 	}
+
 	.home-card:nth-child(2) img {
 		max-width: 200px;
 	}
+
 	.card-price {
 		max-width: 100%;
 	}
@@ -1898,9 +1908,11 @@ footer {
 	.home-wrap:not(.referral-home) {
 		padding: 30px;
 	}
+
 	.home-wrap p {
 		line-height: 150%;
 	}
+
 	.referral-home-card {
 		.home-img {
 			img {
